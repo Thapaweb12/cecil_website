@@ -1,14 +1,52 @@
-import { ProfileImage } from "@/assets/images";
+import { ProfileImage, ProfileQuoteImage } from "@/assets/images";
 import Image from "next/image";
 import React from "react";
 import ShareButton from "./ShareButton";
 import CustomButton from "../common/CustomButton";
+import { FacebookIcon, InstagramIcon, PhoneIcon } from "@/assets/icons";
+import Link from "next/link";
+import CustomInput from "../common/CustomInput";
+import { useForm } from "react-hook-form";
+import DigitalCardForm from "./DigitalCardForm";
 
 type Props = {};
 
+const socialData = [
+  {
+    title: "Facebook",
+    icon: <FacebookIcon className="text-primary size-7" />,
+    link: "/",
+  },
+  {
+    title: "Instagram",
+    icon: <InstagramIcon className="text-primary size-7" />,
+    link: "/",
+  },
+  {
+    title: "Linkedin",
+    icon: <FacebookIcon className="text-primary size-7" />,
+    link: "/",
+  },
+  {
+    title: "Call",
+    icon: <PhoneIcon className="text-primary size-7" />,
+    link: "/",
+  },
+  {
+    title: "Mail",
+    icon: <FacebookIcon className="text-primary size-7" />,
+    link: "/",
+  },
+  {
+    title: "Website",
+    icon: <FacebookIcon className="text-primary size-7" />,
+    link: "/",
+  },
+];
+
 const DigitalCard = (props: Props) => {
   return (
-    <div className="mx-auto max-w-[340px] w-full flex flex-col items-center justify-center gap-y-6 ">
+    <div className="mx-auto max-w-[340px] w-full flex flex-col items-center justify-center gap-y-6 py-16 ">
       <div className="w-[240px] flex-shrink-0 h-[320px] relative ">
         <Image
           src={ProfileImage}
@@ -37,6 +75,27 @@ const DigitalCard = (props: Props) => {
           Add to contact
         </CustomButton>
       </a>
+
+      <div className="grid grid-cols-2 gap-4">
+        {socialData?.map((item, index) => (
+          <Link
+            href={item?.link}
+            key={index}
+            className="bg-gray-100 p-4 rounded-md flex flex-col items-center justify-center gap-3 font-medium"
+          >
+            {item?.icon}
+            {item?.title}
+          </Link>
+        ))}
+      </div>
+      <div className="w-[280px] flex-shrink-0 h-[320px] ">
+        <Image
+          src={ProfileQuoteImage}
+          alt="Profile Quote Image"
+          className="w-full h-full"
+        />
+      </div>
+      <DigitalCardForm />
     </div>
   );
 };
