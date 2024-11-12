@@ -11,7 +11,6 @@ import {
   MapPinIcon,
   PhoneIcon,
   PintrestIcon,
-  SupportIcon,
   TwitterIcon,
 } from "@/assets/icons";
 
@@ -25,11 +24,7 @@ const Footer = () => {
       title: "Mailing address",
       description: "companyData?.mailing_address",
     },
-    {
-      icon: <SupportIcon />,
-      title: "Sales & Support",
-      description: "companyData?.phone_number",
-    },
+
     {
       icon: <PhoneIcon />,
       title: "Toll-free no",

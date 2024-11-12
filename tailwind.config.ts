@@ -9,10 +9,31 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        primary: "var(--primary)",
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addComponents }: any) {
+      addComponents({
+        ".container": {
+          maxWidth: "100%",
+          paddingLeft: "1rem",
+          paddingRight: "1rem",
+          margin: "auto",
+
+          "@screen xl": {
+            paddingLeft: "7rem",
+            paddingRight: "7rem",
+            maxWidth: "1440px",
+            margin: "auto",
+          },
+          "@screen 2xl": {
+            maxWidth: "1536px",
+            margin: "auto",
+          },
+        },
+      });
+    },
+  ],
 } satisfies Config;

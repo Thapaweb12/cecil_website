@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 :root {
+  --primary: rgb(0, 185, 181);
 }
 
 @media (prefers-color-scheme: dark) {

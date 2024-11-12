@@ -49,7 +49,7 @@ const Navbar = () => {
           <Link href={"/"}>
             <Image
               className={`object-contain ${
-                scroll ? "w-48 h-10" : " w-52  min-[1100px]:w-[276px]"
+                scroll ? "h-10" : " h-16  "
               } transition-all duration-200`}
               src={LogoImage}
               alt="LogoImage"
