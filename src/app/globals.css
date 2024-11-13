@@ -4,6 +4,7 @@
 
 :root {
   --primary: rgb(0, 185, 181);
+  --secondary: rgb(16, 111, 154);
 }
 
 @media (prefers-color-scheme: dark) {
