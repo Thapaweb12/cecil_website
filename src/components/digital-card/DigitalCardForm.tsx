@@ -26,8 +26,8 @@ const DigitalCardForm = (props: Props) => {
         register={register}
         errors={errors}
         name="full_name"
-        label="Full Name"
-        placeholder="Enter Your Full Name"
+        label="Name"
+        placeholder="Enter Your name"
       />
       <CustomInput
         register={register}

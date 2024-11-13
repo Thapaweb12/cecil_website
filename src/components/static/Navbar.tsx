@@ -39,7 +39,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="fixed top-0 z-20 w-full bg-foundation-gray-g-10">
+    <nav className="fixed top-0 z-20 w-full bg-slate-200">
       <div
         className={`container hidden lg:block   ${
           scroll ? "py-3" : "py-[26px]"
@@ -55,7 +55,7 @@ const Navbar = () => {
               alt="LogoImage"
             />
           </Link>
-          <div className="flex absolute items-center gap-x-12 left-1/2 -translate-x-1/2 font-normal">
+          <div className="flex items-center gap-x-12 font-normal">
             {Array.isArray(navLinks) &&
               navLinks?.map((item, idx) => {
                 return (
@@ -73,15 +73,6 @@ const Navbar = () => {
                   </div>
                 );
               })}
-          </div>
-          <div className=" flex items-center gap-x-5 font-semibold text-foundation-blue-900 leading-7">
-            <Link href={"/contact-us"}>Contact us</Link>
-            <Link
-              href={"/refer-and-earn"}
-              className="py-[10px] px-5 bg-foundation-blue-50 rounded-[40px]"
-            >
-              Refer & Earn
-            </Link>
           </div>
         </div>
       </div>

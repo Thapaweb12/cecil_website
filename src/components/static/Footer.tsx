@@ -14,21 +14,23 @@ import {
   TwitterIcon,
 } from "@/assets/icons";
 
-import { footerMenuItems } from "./staticdata/footerdata";
 import { LogoImage } from "@/assets/images";
 
 const Footer = () => {
   const footerContactData = [
     {
-      icon: <MapPinIcon className="size-6" />,
-      title: "Mailing address",
-      description: "companyData?.mailing_address",
+      title: "ADDRESS",
+      description: "2934 E. Garvey Ave. S.W. Covina, CA 91791",
     },
 
     {
-      icon: <PhoneIcon />,
-      title: "Toll-free no",
-      description: "companyData?.toll_free_number",
+      title: "CONNECT",
+      description: (
+        <div>
+          <a href="tel:626-534-4411">Phone: 626-534-4411</a>
+          <a href="mailto:cecilev628@gmail.com"> Email: cecilev628@gmail.com</a>
+        </div>
+      ),
     },
   ];
 
@@ -51,9 +53,9 @@ const Footer = () => {
     },
   ];
   return (
-    <div className="bg-foundation-blue-900  text-white  font-medium text-base ">
-      <div className="container relative pt-5 pb-6  sm:pt-12 sm:pb-14">
-        <div className="w-72 md:w-[374px] ">
+    <div className="bg-slate-200  pb-10  text-black  font-medium text-base ">
+      <div className="container py-5 flex gap-10  ">
+        <div className="w-40 ">
           <Image
             src={LogoImage}
             alt="LogoImage"
@@ -62,58 +64,20 @@ const Footer = () => {
             height={100}
           />
         </div>
-
-        <div className=" gap-10 flex flex-col lg:flex-row lg:justify-between   mt-12">
-          <div className=" grid  grid-cols-2 min-[520px]:grid-cols-3 gap-7 md:gap-[87px]">
-            {footerMenuItems.map((item, index) => {
-              return (
-                <div className="flex flex-col gap-[30px]" key={index}>
-                  <p className="font-extrabold ">{item.title}</p>
-                  <div className="gap-4 flex flex-col ">
-                    {item.items.map((data, index) => {
-                      return (
-                        <Link href={data.link} key={index}>
-                          {data.title}
-                        </Link>
-                      );
-                    })}
-                  </div>
+        <div className="grid grid-cols-3 gap-x-10  ">
+          {footerContactData.map((item, index) => {
+            return (
+              <div key={index} className="flex flex-col  ">
+                <div className="text-center"> {item.title}</div>
+                <div className="border-t border-slate-700 text-center pt-3 mt-3 w-fit">
+                  {item.description}
                 </div>
-              );
-            })}
-          </div>
-        </div>
-
-        <div className="border-[#6C9BCC] w-fit border-t-[1px] md:pr-[102px] flex items-center mt-8 pt-7 pb-11 ">
-          <div className="grid grid-cols-2  md:flex  gap-10 ">
-            {footerContactData.map((item, index) => {
-              return (
-                <div
-                  className="flex gap-2 items-start justify-start"
-                  key={index}
-                >
-                  <div>{item.icon}</div>
-                  <div className="flex flex-col space-y-[2px]">
-                    <p className="font-semibold">{item.title}</p>
-                    <p
-                      className={index === 0 ? "font-medium" : "font-semibold"}
-                    >
-                      {item.description}
-                    </p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-        <div className="flex flex-col sm:flex-row gap-4 sm:items-center sm:justify-between  pt-7   border-[#6C9BCC] border-t-[1px]">
-          <span className="font-normal  whitespace-nowrap">
-            © {moment(new Date()).format("YYYY")} Ishan Thapa. All rights
-            reserved.
-          </span>
-          <div className="flex gap-5">
-            <span className=" font-semibold whitespace-nowrap">Follow us</span>
-            <div className="flex gap-6">
+              </div>
+            );
+          })}
+          <div className="flex flex-col items-center">
+            <div className="font-semibold whitespace-nowrap">FOLLOW</div>
+            <div className="flex gap-6 border-t border-slate-700 pt-3 mt-3">
               {footerSocialData.map((item, index) => {
                 return (
                   <Link href={item.link ?? "/"} key={index}>
@@ -124,6 +88,9 @@ const Footer = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div className="font-normal border-t border-slate-700 container pt-5 mt-5 text-center  whitespace-nowrap">
+        © {moment(new Date()).format("YYYY")} Ishan Thapa. All rights reserved.
       </div>
     </div>
   );

@@ -1,21 +1,21 @@
-import React from "react"
-import { FieldValues, UseFormRegister } from "react-hook-form"
-import { twMerge } from "tailwind-merge"
+import React from "react";
+import { FieldValues, UseFormRegister } from "react-hook-form";
+import { twMerge } from "tailwind-merge";
 
-import { Obj } from "@/modules/types"
+import { Obj } from "@/modules/types";
 
 interface Props
   extends React.InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement> {
-  className?: string
-  labelClassName?: string
-  inputClassName?: string
-  label?: string
-  name: string
-  register: UseFormRegister<FieldValues>
-  validation?: Obj
-  leftIcon?: React.ReactNode
-  rightIcon?: React.ReactNode
-  errors: any
+  className?: string;
+  labelClassName?: string;
+  inputClassName?: string;
+  label?: string;
+  name: string;
+  register: UseFormRegister<FieldValues>;
+  validation?: Obj;
+  leftIcon?: React.ReactNode;
+  rightIcon?: React.ReactNode;
+  errors: any;
 }
 
 const CustomInput = ({
@@ -37,8 +37,9 @@ const CustomInput = ({
       {label && (
         <label
           className={twMerge(
-            "font-normal text-base text-foundation-gray-g-500 " + labelClassName
-          )}>
+            "font-normal text-sm text-foundation-gray-g-500 " + labelClassName
+          )}
+        >
           {label}
           {validation?.required?.value && label && (
             <span className="text-red-600">*</span>
@@ -51,12 +52,13 @@ const CustomInput = ({
             twMerge(
               "rounded-lg border border-foundation-gray-g-50 text-base px-4  py-1  text-foundation-gray-g-800 items-center flex gap-2 bg-white "
             ) + className
-          }>
+          }
+        >
           <textarea
             placeholder={label}
             rows={5}
             className={twMerge(
-              " placeholder:text-base w-full  placeholder:text-foundation-gray-g-600 outline-none  " +
+              " placeholder:text-sm w-full  placeholder:text-foundation-gray-g-600 outline-none  " +
                 inputClassName
             )}
             {...register(name, validation)}
@@ -69,7 +71,8 @@ const CustomInput = ({
             twMerge(
               " rounded-lg border border-foundation-gray-g-50 text-base px-4  py-1 bg-white  text-foundation-gray-g-800 items-center flex gap-2  "
             ) + className
-          }>
+          }
+        >
           {leftIcon && leftIcon}
           <input
             className={twMerge(
@@ -88,7 +91,7 @@ const CustomInput = ({
         )}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default CustomInput
+export default CustomInput;
