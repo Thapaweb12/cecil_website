@@ -4,7 +4,7 @@ import React from "react";
 
 const BusinessOpportunity = () => {
   return (
-    <div className="pb-20 container space-y-14">
+    <div className="container space-y-14">
       <div className="space-y-6">
         <h4 className="text-secondary text-xl font-semibold text-center">
           Business Opportunity
@@ -31,7 +31,7 @@ const BusinessOpportunity = () => {
       <div className="space-y-10">
         <div className="grid grid-cols-1 gap-x-5 gap-y-10 md:grid-cols-2">
           <iframe
-           className="w-full h-[400px]"
+            className="w-full h-[400px]"
             src="https://www.youtube.com/embed/McNWKJIEVO4?si=C21GU2z5qwkt2yHz"
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -39,7 +39,7 @@ const BusinessOpportunity = () => {
             allowFullScreen
           />
           <iframe
-           className="w-full h-[400px]"
+            className="w-full h-[400px]"
             src="https://www.youtube.com/embed/ad1sKHRUBlw?si=LMgY3dMPAMKGqFCC"
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -49,7 +49,7 @@ const BusinessOpportunity = () => {
         </div>
         <div>
           <iframe
-           className="w-full"
+            className="w-full"
             height="315"
             src="https://www.youtube.com/embed/AnqqBtKbs1A?si=DwcOUkx-ONdV8lHe"
             title="YouTube video player"

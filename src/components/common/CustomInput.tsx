@@ -37,7 +37,7 @@ const CustomInput = ({
       {label && (
         <label
           className={twMerge(
-            "font-normal text-sm text-foundation-gray-g-500 " + labelClassName
+            "font-normal text-sm text-slate-900 " + labelClassName
           )}
         >
           {label}
@@ -50,7 +50,7 @@ const CustomInput = ({
         <div
           className={
             twMerge(
-              "rounded-lg border border-foundation-gray-g-50 text-base px-4  py-1  text-foundation-gray-g-800 items-center flex gap-2 bg-white "
+              "rounded-lg border border-gray-400  text-base px-4  py-1  text-slate-900 items-center flex gap-2 bg-white "
             ) + className
           }
         >
@@ -58,7 +58,7 @@ const CustomInput = ({
             placeholder={label}
             rows={5}
             className={twMerge(
-              " placeholder:text-sm w-full  placeholder:text-foundation-gray-g-600 outline-none  " +
+              " placeholder:text-sm w-full  placeholder:text-gray-600 outline-none  " +
                 inputClassName
             )}
             {...register(name, validation)}
@@ -69,15 +69,14 @@ const CustomInput = ({
         <div
           className={
             twMerge(
-              " rounded-lg border border-foundation-gray-g-50 text-base px-4  py-1 bg-white  text-foundation-gray-g-800 items-center flex gap-2  "
+              " rounded-lg border border-gray-400 text-base px-4  py-1 bg-white  text-gray-800 items-center flex gap-2  "
             ) + className
           }
         >
           {leftIcon && leftIcon}
           <input
             className={twMerge(
-              " placeholder:text-base w-full  placeholder:text-foundation-gray-g-600 outline-none  " +
-                inputClassName
+              " placeholder:text-base w-full  outline-none  " + inputClassName
             )}
             {...register(name, validation)}
             {...props}

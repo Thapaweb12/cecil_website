@@ -5,16 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-import {
-  FacebookIcon,
-  InstagramIcon,
-  MapPinIcon,
-  PhoneIcon,
-  PintrestIcon,
-  TwitterIcon,
-} from "@/assets/icons";
-
 import { LogoImage } from "@/assets/images";
+import { socialData } from "./staticdata/navdata";
 
 const Footer = () => {
   const footerContactData = [
@@ -34,24 +26,6 @@ const Footer = () => {
     },
   ];
 
-  const footerSocialData = [
-    {
-      icon: <TwitterIcon />,
-      link: "companyData?.twitter",
-    },
-    {
-      icon: <FacebookIcon />,
-      link: "companyData?.facebook",
-    },
-    {
-      icon: <InstagramIcon />,
-      link: "companyData?.instagram",
-    },
-    {
-      icon: <PintrestIcon />,
-      link: "companyData?.linkedin",
-    },
-  ];
   return (
     <div className="bg-slate-200  pb-10  text-black  font-medium text-base ">
       <div className="container py-5  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10   ">
@@ -77,7 +51,7 @@ const Footer = () => {
         <div className="flex flex-col  items-start">
           <div className="font-semibold whitespace-nowrap">FOLLOW</div>
           <div className="flex gap-6 border-t border-slate-700 pt-3 mt-3">
-            {footerSocialData.map((item, index) => {
+            {socialData.map((item, index) => {
               return (
                 <Link target="_blank" href={item.link ?? "/"} key={index}>
                   {item.icon}

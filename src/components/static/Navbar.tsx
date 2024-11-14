@@ -6,9 +6,8 @@ import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
 import MobileNavbar from "./MobileNavbar";
-import { navLinks } from "./staticdata/navdata";
+import { socialData, navLinks } from "./staticdata/navdata";
 import { LogoImage } from "@/assets/images";
-
 const Navbar = () => {
   const pathname = usePathname();
 
@@ -73,6 +72,16 @@ const Navbar = () => {
                   </div>
                 );
               })}
+
+            <div className="flex gap-6  ">
+              {socialData.map((item, index) => {
+                return (
+                  <Link target="_blank" href={item.link ?? "/"} key={index}>
+                    {item.icon}
+                  </Link>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>
