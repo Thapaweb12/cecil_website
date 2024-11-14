@@ -54,7 +54,7 @@ const Footer = () => {
   ];
   return (
     <div className="bg-slate-200  pb-10  text-black  font-medium text-base ">
-      <div className="container py-5 flex gap-10  ">
+      <div className="container py-5  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10   ">
         <div className="w-40 ">
           <Image
             src={LogoImage}
@@ -64,32 +64,30 @@ const Footer = () => {
             height={100}
           />
         </div>
-        <div className="grid grid-cols-3 gap-x-10  ">
-          {footerContactData.map((item, index) => {
-            return (
-              <div key={index} className="flex flex-col  ">
-                <div className="text-center"> {item.title}</div>
-                <div className="border-t border-slate-700 text-center pt-3 mt-3 w-fit">
-                  {item.description}
-                </div>
+        {footerContactData.map((item, index) => {
+          return (
+            <div key={index} className="flex flex-col  ">
+              <div className="text-start"> {item.title}</div>
+              <div className="border-t border-slate-700 text-start pt-3 mt-3 w-fit">
+                {item.description}
               </div>
-            );
-          })}
-          <div className="flex flex-col items-center">
-            <div className="font-semibold whitespace-nowrap">FOLLOW</div>
-            <div className="flex gap-6 border-t border-slate-700 pt-3 mt-3">
-              {footerSocialData.map((item, index) => {
-                return (
-                  <Link href={item.link ?? "/"} key={index}>
-                    {item.icon}
-                  </Link>
-                );
-              })}
             </div>
+          );
+        })}
+        <div className="flex flex-col  items-start">
+          <div className="font-semibold whitespace-nowrap">FOLLOW</div>
+          <div className="flex gap-6 border-t border-slate-700 pt-3 mt-3">
+            {footerSocialData.map((item, index) => {
+              return (
+                <Link target="_blank" href={item.link ?? "/"} key={index}>
+                  {item.icon}
+                </Link>
+              );
+            })}
           </div>
         </div>
       </div>
-      <div className="font-normal border-t border-slate-700 container pt-5 mt-5 text-center  whitespace-nowrap">
+      <div className="font-normal border-t border-slate-700 container pt-5 mt-5 text-center  sm:whitespace-nowrap">
         © {moment(new Date()).format("YYYY")} Ishan Thapa. All rights reserved.
       </div>
     </div>

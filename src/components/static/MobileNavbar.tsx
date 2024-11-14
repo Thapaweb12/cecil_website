@@ -25,7 +25,7 @@ const MobileNavbar = ({ scroll }: Props) => {
       <div className="container flex items-center justify-between ">
         <Link href={"/"}>
           <Image
-            className={`object-contain w-48 h-10  transition-all duration-200`}
+            className={`object-contain w-20 h-10  transition-all duration-200`}
             src={LogoImage}
             alt="LogoImage"
             priority
@@ -42,13 +42,13 @@ const MobileNavbar = ({ scroll }: Props) => {
       <div
         className={`${
           isSidebarOpen ? "w-full  min-[600px]:w-[70%] " : "w-0"
-        }  absolute right-0 top-0 z-10 h-screen overflow-x-hidden bg-foundation-gray-g-10 py-3 transition-all duration-200`}
+        }  absolute right-0 top-0 z-10 h-screen overflow-x-hidden bg-slate-200 py-3 transition-all duration-200`}
       >
         <div className="py-3">
           <div className="flex items-center justify-between  min-[600px]:justify-end px-3">
             <Link href={"/"} onClick={() => setIsSidebarOpen((prev) => !prev)}>
               <Image
-                className={`object-contain w-48 h-10 min-[600px]:w-0 " transition-all duration-200`}
+                className={`object-contain w-20 h-10 min-[600px]:w-0 " transition-all duration-200`}
                 src={LogoImage}
                 alt="LogoImage"
                 priority

@@ -24,8 +24,8 @@ export default {
           margin: "auto",
 
           "@screen xl": {
-            paddingLeft: "7rem",
-            paddingRight: "7rem",
+            paddingLeft: "10rem",
+            paddingRight: "10rem",
             maxWidth: "1440px",
             margin: "auto",
           },
