@@ -26,15 +26,23 @@ export const navLinks: InavLinks[] = [
   },
 ];
 
-import { FacebookIcon, InstagramIcon } from "@/assets/icons";
+import {
+  FacebookFilledIcon,
+   InstagramFilledIcon,
+   LinkedInFilledIcon,
+} from "@/assets/icons";
 export const socialData = [
   {
-    icon: <FacebookIcon />,
-    link: "fb.com",
+    icon: <FacebookFilledIcon className="text-primary size-7" />,
+    link: "https://www.facebook.com/profile.php?id=100007386450316",
   },
   {
-    icon: <InstagramIcon />,
-    link: "instagram.com",
+    icon: <LinkedInFilledIcon className="text-primary size-7" />,
+    link: "https://www.linkedin.com/in/cecile-m-villacorta-rn-2340b371/",
+  },
+  {
+    icon: <InstagramFilledIcon className="text-primary size-7" />,
+    link: "https://www.instagram.com/cecile_villacorta_miranda",
   },
   // {
   //   icon: <TwitterIcon />,

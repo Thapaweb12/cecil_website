@@ -3,44 +3,50 @@ import Image from "next/image";
 import React from "react";
 import ShareButton from "./ShareButton";
 import CustomButton from "../common/CustomButton";
-import { FacebookIcon, InstagramIcon, PhoneIcon } from "@/assets/icons";
+import {
+  FacebookIcon,
+  InstagramIcon,
+  LinkedInIcon,
+  MailIcon,
+  PhoneIcon,
+  WebsiteIcon,
+} from "@/assets/icons";
 import Link from "next/link";
-import CustomInput from "../common/CustomInput";
-import { useForm } from "react-hook-form";
+
 import DigitalCardForm from "./DigitalCardForm";
 
 type Props = {};
 
 const socialData = [
   {
+    title: "Call",
+    icon: <PhoneIcon className="text-primary size-7" />,
+    link: "tel:626-534-4411",
+  },
+  {
+    title: "Mail",
+    icon: <MailIcon className="text-primary size-7" />,
+    link: "mailto:cecilev628@gmail.com",
+  },
+  {
+    title: "Website",
+    icon: <WebsiteIcon className="text-primary size-7" />,
+    link: "/",
+  },
+  {
     title: "Facebook",
     icon: <FacebookIcon className="text-primary size-7" />,
-    link: "/",
+    link: "https://www.facebook.com/profile.php?id=100007386450316",
+  },
+  {
+    title: "Linkedin",
+    icon: <LinkedInIcon className="text-primary size-7" />,
+    link: "https://www.linkedin.com/in/cecile-m-villacorta-rn-2340b371/",
   },
   {
     title: "Instagram",
     icon: <InstagramIcon className="text-primary size-7" />,
-    link: "/",
-  },
-  {
-    title: "Linkedin",
-    icon: <FacebookIcon className="text-primary size-7" />,
-    link: "/",
-  },
-  {
-    title: "Call",
-    icon: <PhoneIcon className="text-primary size-7" />,
-    link: "/",
-  },
-  {
-    title: "Mail",
-    icon: <FacebookIcon className="text-primary size-7" />,
-    link: "/",
-  },
-  {
-    title: "Website",
-    icon: <FacebookIcon className="text-primary size-7" />,
-    link: "/",
+    link: "https://www.instagram.com/cecile_villacorta_miranda",
   },
 ];
 
@@ -81,6 +87,7 @@ const DigitalCard = (props: Props) => {
           <Link
             href={item?.link}
             key={index}
+            target="_blank"
             className="bg-gray-100 p-4 rounded-md flex flex-col items-center justify-center gap-3 font-medium"
           >
             {item?.icon}

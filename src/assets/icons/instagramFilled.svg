@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="100%" height="100%" fit="" preserveAspectRatio="xMidYMid meet" focusable="false">
+<g class="nc-icon-wrapper">
+  <path fill="#444444" d="M44.45 0H3.55C1.58 0 0 1.55 0 3.46v41.08C0 46.44 1.6 48 3.54 48h40.9c1.97 0 3.56-1.55 3.56-3.46V3.46C48 1.56 46.4 0 44.45 0z"></path>
+  <g transform="scale(1.63) translate(3.5 3.2)">
+    <g id="Rectangle_1784" fill="none" stroke="#fff" stroke-width="2">
+      <rect width="23" height="23" rx="7" stroke="none"></rect>
+      <rect x="1" y="1" width="21" height="21" rx="6" fill="none"></rect>
+    </g>
+    <g id="Ellipse_116" transform="translate(5.557 5.557)" fill="none" stroke="#fff" stroke-width="2">
+      <ellipse cx="5.943" cy="5.943" rx="5.943" ry="5.943" stroke="none"></ellipse>
+      <ellipse cx="5.943" cy="5.943" rx="4.943" ry="4.943" fill="none"></ellipse>
+    </g>
+    <g id="Ellipse_117" transform="translate(16.176 3.716)" fill="none" stroke="#fff" stroke-width="2">
+      <circle cx="1.445" cy="1.445" r="1.445" stroke="none"></circle>
+      <circle cx="1.445" cy="1.445" r="0.445" fill="none"></circle>
+    </g>
+  </g>
+</g>
+</svg>
