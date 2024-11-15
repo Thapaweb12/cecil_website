@@ -12,22 +12,28 @@ const Footer = () => {
   const footerContactData = [
     {
       title: "ADDRESS",
-      description: "2934 E Garvey Ave S, West Covina, CA  91791",
+      description: (
+        <div className="whitespace-nowrap">
+          <p>2934 E Garvey Ave S</p>
+          <p>West Covina, CA 91791</p>
+        </div>
+      ),
     },
 
     {
       title: "CONNECT",
       description: (
         <div>
-          <div className="whitespace-nowrap">
-            <a href="tel:626-534-4411">Phone: 626-534-4411</a>
-          </div>
-          <div className="whitespace-nowrap">
+           <div className="whitespace-nowrap">
             <a href="mailto:cecilev628@gmail.com">
               {" "}
               Email: cecilev628@gmail.com
             </a>
           </div>
+          <div className="whitespace-nowrap">
+            <a href="tel:626-534-4411">Phone: 626-534-4411</a>
+          </div>
+         
         </div>
       ),
     },
@@ -35,17 +41,17 @@ const Footer = () => {
 
   return (
     <div className="bg-slate-200  pb-10  text-black  font-medium text-base ">
-      <div className="container py-5  grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10   ">
+      <div className="container py-5  grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-4 gap-10   ">
         <div className="h-28">
           <Image
             src={LogoImage}
             alt="LogoImage"
-            className="object-contain w-fit h-full"
+            className="object-contain w-full   h-full"
           />
         </div>
         {footerContactData.map((item, index) => {
           return (
-            <div key={index} className="flex flex-col  ">
+            <div key={index} className="flex flex-col items-center   ">
               <div className="text-start"> {item.title}</div>
               <div className="border-t border-slate-700 text-start pt-3 mt-3 w-fit">
                 {item.description}
@@ -53,7 +59,7 @@ const Footer = () => {
             </div>
           );
         })}
-        <div className="flex flex-col  items-start">
+        <div className="flex flex-col  items-center ">
           <div className="font-semibold whitespace-nowrap">FOLLOW</div>
           <div className="flex gap-6 border-t border-slate-700 pt-3 mt-3">
             {socialData.map((item, index) => {
