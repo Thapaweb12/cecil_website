@@ -4,7 +4,7 @@ import { twMerge } from "tailwind-merge";
 
 import { Obj } from "@/modules/types";
 
-interface Props
+export interface IInputTypes
   extends React.InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement> {
   className?: string;
   labelClassName?: string;
@@ -31,7 +31,7 @@ const CustomInput = ({
   rightIcon,
   errors,
   ...props
-}: Props) => {
+}: IInputTypes) => {
   return (
     <div className={twMerge("flex w-full  flex-col gap-y-[6px] h-fit ")}>
       {label && (

@@ -8,18 +8,18 @@ export const navLinks: InavLinks[] = [
     title: "Home",
     link: `/`,
   },
-  // {
-  //   title: "Business Tracker",
-  //   link: `/business-tracker`,
-  // },
-  // {
-  //   title: "Licensing",
-  //   link: "/licensing",
-  // },
-  // {
-  //   title: "E and O",
-  //   link: "/e-and-o",
-  // },
+  {
+    title: "Business Tracker",
+    link: `/business-tracker`,
+  },
+  {
+    title: "Licensing",
+    link: "/licensing",
+  },
+  {
+    title: "E and O",
+    link: "/e-and-o",
+  },
   {
     title: "Contact",
     link: "/contact",
@@ -28,8 +28,8 @@ export const navLinks: InavLinks[] = [
 
 import {
   FacebookFilledIcon,
-   InstagramFilledIcon,
-   LinkedInFilledIcon,
+  InstagramFilledIcon,
+  LinkedInFilledIcon,
 } from "@/assets/icons";
 export const socialData = [
   {

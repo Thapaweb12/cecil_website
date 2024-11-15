@@ -20,7 +20,7 @@ const MobileNavbar = ({ scroll }: Props) => {
     <div
       className={`block  ${
         scroll ? "py-3" : "py-5"
-      }  transition-all duration-200 sm:hidden`}
+      }  transition-all duration-200 lg:hidden`}
     >
       <div className="container flex items-center justify-between ">
         <Link href={"/"}>

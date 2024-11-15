@@ -25,11 +25,6 @@ export async function POST(request: NextRequest) {
   // Retrieve the header title based on the type, with a fallback
   const headerTitle = headerTitleMap[type] || "Contact";
 
-  // // Basic validation (optional)
-  // if (!validator.isEmail(email) || !name || !subject || !message) {
-  //   return NextResponse.json({ message: "Invalid form data!" });
-  // }
-
   // create transporter object with secure transport
   const transporter = nodemailer.createTransport({
     host: process.env.EMAIL_HOST,
@@ -76,7 +71,7 @@ export async function POST(request: NextRequest) {
       });
     } catch (error) {
       console.error(error);
-      return NextResponse.json({ message: "Error while sending email." });
+      return NextResponse.json({ message: "Error while sending reply email." });
     }
     return NextResponse.json({ message: "Email sent successfully." });
   } catch (error) {
