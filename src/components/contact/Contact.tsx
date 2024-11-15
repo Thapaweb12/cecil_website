@@ -21,13 +21,12 @@ const Contact = (props: Props) => {
         ></iframe>
         <div className="space-y-6">
           <div className="space-y-4">
-          <h4 className="text-2xl font-bold  text-center ">Contact Us</h4>
+            <h4 className="text-2xl font-bold  text-center ">Contact Us</h4>
 
-          <p className="text-center">
-            To make an appointment for any information, you can fill out the
-            attached form, or contact us directly
-          </p>
-
+            <p className="text-center">
+              To make an appointment for any information, you can fill out the
+              attached form, or contact us directly
+            </p>
           </div>
 
           <ContactForm type="contact" />

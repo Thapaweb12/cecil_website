@@ -7,7 +7,11 @@ import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 
 interface Props {
-  type: "living-benefits" | "business-opportunity" | "contact";
+  type:
+    | "digital_card_contact"
+    | "living_benefits"
+    | "business_opportunity"
+    | "contact";
 }
 
 const ContactForm = ({ type }: Props) => {

@@ -80,6 +80,8 @@ const BusinessTrackerForm = () => {
   ];
 
   async function handleMailSubmit(data: any) {
+
+    console.log(data)
     if (data.fake_data) {
       toast.error("Please don't try to spam me");
       setIsLoading(false);
