@@ -7,11 +7,13 @@
   --secondary: rgb(16, 111, 154);
   --dark-blue: rgb(36, 56, 83);
 }
-
+/* 
 @media (prefers-color-scheme: dark) {
   :root {
   }
 }
+  */
 
-body {
+.custom-outline {
+  -webkit-text-stroke: 1px white; /* Adds a 1px black outline */
 }
