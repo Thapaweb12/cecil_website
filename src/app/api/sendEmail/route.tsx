@@ -6,8 +6,24 @@ export async function POST(request: NextRequest) {
   const formData = await request.formData();
   const name = formData.get("name");
   const email = formData.get("email");
-  const subject = formData.get("subject");
+  const phone = formData.get("phone");
   const message = formData.get("message");
+  const type:
+    | "digital-card-contact"
+    | "living-benefits"
+    | "business-opportunity"
+    | "contact" = formData.get("type") as any;
+
+  // Map each type to a user-friendly title
+  const headerTitleMap: { [key: string]: string } = {
+    "digital-card-contact": "Digital Card Contact",
+    "living-benefits": "Living Benefits",
+    "business-opportunity": "Business Opportunity",
+    contact: "Contact",
+  };
+
+  // Retrieve the header title based on the type, with a fallback
+  const headerTitle = headerTitleMap[type] || "Contact";
 
   // // Basic validation (optional)
   // if (!validator.isEmail(email) || !name || !subject || !message) {
@@ -34,11 +50,17 @@ export async function POST(request: NextRequest) {
       to: process.env.EMAIL_RECIPIENT,
       subject: `Website activity from ${email}`,
       html: `
-        <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem;">Contact Details</div>
+        <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem;">${headerTitle}</div>
         <p style="margin-bottom: 0.5rem;"><span style="font-weight: bold;">Name:</span> ${name}</p>
         <p style="margin-bottom: 0.5rem;"><span style="font-weight: bold;">Email:</span> ${email}</p>
-        <p style="margin-bottom: 0.5rem;"><span style="font-weight: bold;">Subject:</span> ${subject}</p>
-        <p style="margin-bottom: 0.5rem;"><span style="font-weight: bold;">Message:</span> ${message}</p>
+        ${
+          phone &&
+          `<p style="margin-bottom: 0.5rem;"><span style="font-weight: bold;">Subject:</span> ${phone}</p>`
+        }
+        ${
+          message &&
+          `<p style="margin-bottom: 0.5rem;"><span style="font-weight: bold;">Message:</span> ${message}</p>`
+        }
       `,
     });
     // send feedback mail to user

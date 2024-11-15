@@ -40,7 +40,7 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 z-20 w-full bg-slate-200">
       <div
-        className={`container hidden lg:block   ${
+        className={`container hidden sm:block   ${
           scroll ? "py-3" : "py-[26px]"
         }  transition-all duration-200 `}
       >

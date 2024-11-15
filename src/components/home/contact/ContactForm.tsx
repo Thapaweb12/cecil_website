@@ -38,13 +38,15 @@ const ContactForm = ({ type }: Props) => {
   async function handleMailSubmit(data: any) {
     if (data.fake_data) {
       toast.error("Please don't try to spam me");
+      setIsLoading(false);
       return;
     }
     try {
       const formData = new FormData();
+      formData.append("type", type);
       formData.append("name", data.name);
       formData.append("email", data.email);
-      formData.append("subject", data.subject);
+      formData.append("phone", data.phone);
       formData.append("message", data.message);
 
       const response = await fetch("/api/sendEmail", {
@@ -63,6 +65,7 @@ const ContactForm = ({ type }: Props) => {
       reset();
     } catch (err) {
       console.error("Error:", err);
+      setIsLoading(false);
       toast.error("Something went wrong!");
     }
   }
@@ -100,7 +103,11 @@ const ContactForm = ({ type }: Props) => {
         />
       </div>
 
-      <CustomButton className="bg-secondary py-1 " type="submit">
+      <CustomButton
+        isLoading={isLoading}
+        className="bg-secondary py-1 "
+        type="submit"
+      >
         Submit
       </CustomButton>
     </form>

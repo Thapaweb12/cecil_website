@@ -10,6 +10,7 @@ import LinkedInIcon from "./linkedin.svg";
 import FacebookFilledIcon from "./facebookFilled.svg";
 import InstagramFilledIcon from "./instagramFilled.svg";
 import LinkedInFilledIcon from "./linkedinFilled.svg";
+import LoadingIcon from "./loading.svg";
 
 export {
   CrossIcon,
@@ -24,4 +25,5 @@ export {
   FacebookFilledIcon,
   InstagramFilledIcon,
   LinkedInFilledIcon,
+  LoadingIcon,
 };

@@ -5,7 +5,7 @@ import React, { useState } from "react";
 
 import { CrossIcon, HamBurgerIcon } from "@/assets/icons";
 
-import { navLinks } from "./staticdata/navdata";
+import { navLinks, socialData } from "./staticdata/navdata";
 import { LogoImage } from "@/assets/images";
 
 type Props = {
@@ -20,7 +20,7 @@ const MobileNavbar = ({ scroll }: Props) => {
     <div
       className={`block  ${
         scroll ? "py-3" : "py-5"
-      }  transition-all duration-200 lg:hidden`}
+      }  transition-all duration-200 sm:hidden`}
     >
       <div className="container flex items-center justify-between ">
         <Link href={"/"}>
@@ -87,25 +87,14 @@ const MobileNavbar = ({ scroll }: Props) => {
                   </div>
                 );
               })}
-            <div className="flex flex-col font-semibold text-foundation-blue-900 leading-7  ">
-              <Link
-                href={"/contact-us"}
-                onClick={() => {
-                  setIsSidebarOpen(false);
-                }}
-                className="p-3 border-b-[1px] border-foundation-gray-g-200"
-              >
-                Contact us
-              </Link>
-              <Link
-                href={"/refer-and-earn"}
-                onClick={() => {
-                  setIsSidebarOpen(false);
-                }}
-                className=" p-3 "
-              >
-                Refer & Earn
-              </Link>
+            <div className="flex gap-6  pt-4 px-3 ">
+              {socialData.map((item, index) => {
+                return (
+                  <Link target="_blank" href={item.link ?? "/"} key={index}>
+                    {item.icon}
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </div>

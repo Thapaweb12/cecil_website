@@ -3,6 +3,7 @@ import Link from "next/link";
 import React, { ButtonHTMLAttributes, FC } from "react";
 
 import { cn } from "@/lib/cn";
+import { LoadingIcon } from "@/assets/icons";
 
 {
   <div className=" bg-transparent text-foundation-gray-g-800  "></div>;
@@ -49,7 +50,13 @@ const CustomButton: FC<ButtonProps> = ({
       href={path}
       className={cn(buttonVariants({ className, variant, size }))}
     >
-      {isLoading ? <div className="spinner w-full"></div> : children}
+      {isLoading ? (
+        <div>
+          <LoadingIcon className="size-6 animate-spin" />
+        </div>
+      ) : (
+        children
+      )}
     </Link>
   ) : (
     <button
@@ -57,7 +64,13 @@ const CustomButton: FC<ButtonProps> = ({
       className={cn(buttonVariants({ className, variant, size }))}
       {...props}
     >
-      {isLoading ? <div className="spinner w-full"></div> : children}
+      {isLoading ? (
+        <div>
+          <LoadingIcon className="size-6 animate-spin" />
+        </div>
+      ) : (
+        children
+      )}
     </button>
   );
 };
