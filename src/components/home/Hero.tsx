@@ -14,10 +14,7 @@ const Hero = (props: Props) => {
             <div className="max-w-[550px]  ">
               <p>LIC. California Agent #0L99919</p>
               <p>
-                Also licensed in Florida, Washington, Idaho, Nevada, Arizona.
-                Georgia, Massachusetts, Missouri, Michigan, Minnesota, New
-                Jersey, New York, North Carolina, Rhode Island, Colorado, Texas,
-                and Ohio.
+                Also licensed in Different States.
               </p>
             </div>
           </div>

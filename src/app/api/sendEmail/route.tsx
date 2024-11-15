@@ -55,7 +55,7 @@ export async function POST(request: NextRequest) {
         <p style="margin-bottom: 0.5rem;"><span style="font-weight: bold;">Email:</span> ${email}</p>
         ${
           phone &&
-          `<p style="margin-bottom: 0.5rem;"><span style="font-weight: bold;">Subject:</span> ${phone}</p>`
+          `<p style="margin-bottom: 0.5rem;"><span style="font-weight: bold;">Phone:</span> ${phone}</p>`
         }
         ${
           message &&

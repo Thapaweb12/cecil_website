@@ -12,15 +12,22 @@ const Footer = () => {
   const footerContactData = [
     {
       title: "ADDRESS",
-      description: "2934 E. Garvey Ave. S.W. Covina, CA 91791",
+      description: "2934 E Garvey Ave S, West Covina, CA  91791",
     },
 
     {
       title: "CONNECT",
       description: (
         <div>
-          <a href="tel:626-534-4411">Phone: 626-534-4411</a>
-          <a href="mailto:cecilev628@gmail.com"> Email: cecilev628@gmail.com</a>
+          <div className="whitespace-nowrap">
+            <a href="tel:626-534-4411">Phone: 626-534-4411</a>
+          </div>
+          <div className="whitespace-nowrap">
+            <a href="mailto:cecilev628@gmail.com">
+              {" "}
+              Email: cecilev628@gmail.com
+            </a>
+          </div>
         </div>
       ),
     },
@@ -28,14 +35,12 @@ const Footer = () => {
 
   return (
     <div className="bg-slate-200  pb-10  text-black  font-medium text-base ">
-      <div className="container py-5  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10   ">
-        <div className="w-40 ">
+      <div className="container py-5  grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10   ">
+        <div className="h-28">
           <Image
             src={LogoImage}
             alt="LogoImage"
-            className="object-contain"
-            width={100}
-            height={100}
+            className="object-contain w-fit h-full"
           />
         </div>
         {footerContactData.map((item, index) => {
@@ -62,7 +67,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="font-normal border-t border-slate-700 container pt-5 mt-5 text-center  sm:whitespace-nowrap">
-        © {moment(new Date()).format("YYYY")} Ishan Thapa. All rights reserved.
+        © {moment(new Date()).format("YYYY")} Thapa. All rights reserved.
       </div>
     </div>
   );

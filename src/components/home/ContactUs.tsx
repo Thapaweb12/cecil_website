@@ -21,9 +21,9 @@ const ContactUs = (props: Props) => {
           <ContactForm type="business-opportunity" />
         </div>
       </div>
-      <div className="max-w-lg mx-auto space-y-4">
-        <h4 className="text-2xl font-bold  text-center ">Contact us</h4>
-        <div className="space-y-2">
+      {/* <div className="max-w-lg mx-auto space-y-4">
+        <h4 className="text-4xl font-bold  text-center ">Contact us</h4>
+        <div className="space-y-2 text-center font-semibold">
           <p>
             To make an appointment for any information, you can fill out the
             attached form, or contact us directly:
@@ -31,7 +31,7 @@ const ContactUs = (props: Props) => {
           <p>Phone : 1(626) 534-4411</p>
           <p>Email : cecilev628@gmail.com</p>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
