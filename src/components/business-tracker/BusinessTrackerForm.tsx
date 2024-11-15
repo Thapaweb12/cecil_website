@@ -17,6 +17,7 @@ const BusinessTrackerForm = () => {
   } = useForm();
   const [isLoading, setIsLoading] = useState(false);
 
+  const checkedReasons = watch("reasons") ? watch("reasons") : [];
   const inputFields = [
     {
       name: "name",
@@ -80,8 +81,7 @@ const BusinessTrackerForm = () => {
   ];
 
   async function handleMailSubmit(data: any) {
-
-    console.log(data)
+    console.log(data);
     if (data.fake_data) {
       toast.error("Please don't try to spam me");
       setIsLoading(false);
@@ -99,12 +99,7 @@ const BusinessTrackerForm = () => {
           formData.append(key, data[key]);
         }
       });
-
-      // Debugging: Log FormData contents (in browser environment)
-      for (let pair of formData.entries()) {
-        console.log(pair[0], pair[1]);
-      }
-
+      formData.append("type", "business_tracker");
       const response = await fetch("/api/sendEmail", {
         method: "POST",
         body: formData,
@@ -212,7 +207,7 @@ const BusinessTrackerForm = () => {
                 className="size-4"
                 {...register("reasons")}
                 value={option}
-                checked={watch("reasons")?.includes(option)}
+                checked={checkedReasons?.includes(option)}
               />
               <label>{option}</label>
             </div>

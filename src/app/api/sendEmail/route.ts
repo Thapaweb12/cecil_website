@@ -18,9 +18,12 @@ export async function POST(request: NextRequest) {
   const hour_committed = formData.get("hour_committed") as string | null;
   const monthly_income = formData.get("monthly_income") as string | null;
   const other_cft = formData.get("other_cft") as string | null;
+  const cft_email = formData.get("cft_email") as string | null;
 
-  const reasons = formData.get("reasons") as string[] | null;
+  const reasons = formData.get("reasons") as string | null;
+  const parsedReasons = reasons ? JSON.parse(reasons ?? "") : [];
 
+  console.log(parsedReasons, "parsed reason");
   const type:
     | "digital_card_contact"
     | "living_benefits"
@@ -58,6 +61,7 @@ export async function POST(request: NextRequest) {
       type === "business_tracker"
         ? populateTemplate(businessTrackerTemplate, {
             name,
+            cft_email: cft_email ?? "",
             message: message
               ? `<p><strong>Message:</strong> ${message}</p>`
               : "",
@@ -73,8 +77,10 @@ export async function POST(request: NextRequest) {
             other_cft: other_cft
               ? `<p><strong>Other CFT:</strong> ${other_cft}</p>`
               : "",
-            reasons: `${reasons?.map((item) => ` <li>${item}</li>`)}
-  `,
+            reasons:
+              parsedReasons && Array.isArray(parsedReasons)
+                ? `${parsedReasons?.map((item) => `<li>${item}</li>`).join("")}`
+                : "",
           })
         : populateTemplate(adminNotificationTemplate, {
             headerTitle,

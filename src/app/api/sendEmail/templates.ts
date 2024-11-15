@@ -1,18 +1,137 @@
-export const adminNotificationTemplate = `
-  <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem;">{{headerTitle}}</div>
-  <p style="margin-bottom: 0.5rem;"><span style="font-weight: bold;">Name:</span> {{name}}</p>
-  <p style="margin-bottom: 0.5rem;"><span style="font-weight: bold;">Email:</span> {{email}}</p>
-  {{phone}}
-  {{message}}
+export const adminNotificationTemplate = `<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+      }
+      .header {
+        font-size: 1.8rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+        text-align: center;
+        color: #4CAF50;
+      }
+      .section {
+        margin-bottom: 20px;
+      }
+      .section-title {
+        font-size: 1.3rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #555;
+      }
+      .content {
+        margin-left: 20px;
+      }
+      .content p {
+        margin: 5px 0;
+        font-size: 1rem;
+      }
+      .content strong {
+        font-weight: bold;
+      }
+      .footer {
+        font-size: 0.9rem;
+        color: #888;
+        text-align: center;
+        margin-top: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">{{headerTitle}}</div>
+      <div class="section">
+        <div class="section-title">Personal Information</div>
+        <div class="content">
+          <p><strong>Name:</strong> {{name}}</p>
+          <p><strong>Email:</strong> {{email}}</p>
+          {{phone}} 
+          {{message}} 
+        </div>
+      </div>
+      <div class="footer">
+        <p>This is an automated message, please do not reply directly to this email.</p>
+      </div>
+    </div>
+  </body>
+</html>
+
 `;
 
-export const userResponseTemplate = `
-  <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem;">
-    Thank you for contacting me
-  </div>
-  <p style="margin-bottom: 0.5rem;">
-    Dear {{name}}, I have received your message and will get back to you as soon as possible.
-  </p>
+export const userResponseTemplate = `<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+      }
+      .header {
+        font-size: 1.8rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+        text-align: center;
+        color: #4CAF50;
+      }
+      .content {
+        margin-left: 20px;
+      }
+      .content p {
+        margin: 5px 0;
+        font-size: 1rem;
+      }
+      .content strong {
+        font-weight: bold;
+      }
+      .footer {
+        font-size: 0.9rem;
+        color: #888;
+        text-align: center;
+        margin-top: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">Thank You for Contacting Us</div>
+
+      <div class="content">
+        <p>Dear {{name}},</p>
+        <p>I have received your message and will get back to you as soon as possible.</p>
+      </div>
+
+      <div class="footer">
+        <p>This is an automated message, please do not reply directly to this email.</p>
+      </div>
+    </div>
+  </body>
+</html>
+
 `;
 
 export const businessTrackerTemplate = `<!DOCTYPE html>
@@ -78,7 +197,6 @@ export const businessTrackerTemplate = `<!DOCTYPE html>
  {{hour_committed}}
 {{monthly_income}}
 {{other_cft}}
-
 
         </div>
       </div>
