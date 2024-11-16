@@ -1,4 +1,3 @@
-import Head from "next/head";
 import React from "react";
 import Hero from "../home/Hero";
 import BusinessTrackerForm from "./BusinessTrackerForm";
