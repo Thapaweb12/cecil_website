@@ -11,6 +11,7 @@ import FacebookFilledIcon from "./facebookFilled.svg";
 import InstagramFilledIcon from "./instagramFilled.svg";
 import LinkedInFilledIcon from "./linkedinFilled.svg";
 import LoadingIcon from "./loading.svg";
+import ChevronDoubleRightIcon from "./ChevronDoubleRight.svg";
 
 export {
   CrossIcon,
@@ -26,4 +27,5 @@ export {
   InstagramFilledIcon,
   LinkedInFilledIcon,
   LoadingIcon,
+  ChevronDoubleRightIcon,
 };

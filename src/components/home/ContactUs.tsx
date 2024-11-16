@@ -12,13 +12,13 @@ const ContactUs = (props: Props) => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="space-y-6">
           <h4 className="text-2xl font-bold  text-center ">Living Benefits</h4>
-          <ContactForm type="living-benefits" />
+          <ContactForm type="living_benefits" />
         </div>
         <div className="space-y-6">
           <h4 className="text-2xl font-bold  text-center ">
             Business Opportunity
           </h4>
-          <ContactForm type="business-opportunity" />
+          <ContactForm type="business_opportunity" />
         </div>
       </div>
       {/* <div className="max-w-lg mx-auto space-y-4">
