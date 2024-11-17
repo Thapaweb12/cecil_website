@@ -18,41 +18,72 @@ const BusinessTrackerForm = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const checkedReasons = watch("reasons") ? watch("reasons") : [];
+  const checked_yes_no = watch("checked_yes_no") ? watch("checked_yes_no") : [];
   const inputFields = [
     {
       name: "name",
       type: "text",
       lable: "Name",
       placeholder: "Your Name",
-      required: true,
+      validation: {
+        required: {
+          value: true,
+          message: "Opps! Enter your name",
+        },
+      },
     },
     {
       name: "referring_agent",
       type: "text",
       lable: "Referring Agent",
       placeholder: "Enter Name Referrring Agent",
-      required: true,
+      validation: {
+        required: {
+          value: true,
+          message: "Opps! Enter your Referrring Agent Name",
+        },
+      },
     },
     {
       name: "other_cft",
       type: "text",
       lable: "Other CFT",
       placeholder: "If other, input name of CFT here",
-      required: true,
+      validation: {
+        required: {
+          value: true,
+          message: "Opps! Enter your name of CFT",
+        },
+      },
     },
 
     {
       name: "cft_email",
       type: "email",
+      lable: "CFT Email",
       placeholder: "Enter CFT Email",
-      required: true,
+      validation: {
+        required: {
+          value: true,
+          message: "Opps! Enter your email",
+        },
+        pattern: {
+          value: "/^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,}$/i",
+          message: "Opps! Enter a Valid email",
+        },
+      },
     },
 
     {
       name: "checked_yes_no",
       type: "text",
       placeholder: "Checked Answers: Yes or No",
-      required: true,
+      validation: {
+        required: {
+          value: true,
+          message: "Opps! Select Option",
+        },
+      },
     },
 
     {
@@ -137,7 +168,7 @@ const BusinessTrackerForm = () => {
           type={inputFields[0].type}
           label={inputFields[0]?.lable}
           placeholder={inputFields[0].placeholder}
-          required={inputFields[0].required}
+          validation={inputFields[0]?.validation}
           register={register}
           errors={errors}
         />
@@ -147,7 +178,16 @@ const BusinessTrackerForm = () => {
           type="email"
           label="Email"
           placeholder="Enter Your Email"
-          required={true}
+          validation={{
+            required: {
+              value: true,
+              message: "Opps! Enter your email",
+            },
+            pattern: {
+              value: "/^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,}$/i",
+              message: "Opps! Enter a Valid email",
+            },
+          }}
           register={register}
           errors={errors}
         />
@@ -157,16 +197,17 @@ const BusinessTrackerForm = () => {
           type={inputFields[1].type}
           label={inputFields[1]?.lable}
           placeholder={inputFields[1].placeholder}
-          required={inputFields[1].required}
+          validation={inputFields[1].validation}
           register={register}
           errors={errors}
         />
 
         <div className="flex flex-col gap-2">
           <label htmlFor="certified_field_trainer">
-            Certified Field Trainer
+            Certified Field Trainer<span className="text-red-600">*</span>
           </label>
           <select
+            required
             id="certified_field_trainer"
             {...register("certified_field_trainer")}
             defaultValue={"Select Certified Field Trainer"}
@@ -183,7 +224,7 @@ const BusinessTrackerForm = () => {
             type={inputFields[2].type}
             label={inputFields[2]?.lable}
             placeholder={inputFields[2].placeholder}
-            required={inputFields[2].required}
+            validation={inputFields[2].validation}
             register={register}
             errors={errors}
           />
@@ -194,42 +235,74 @@ const BusinessTrackerForm = () => {
           type={inputFields[3].type}
           label={inputFields[3]?.lable}
           placeholder={inputFields[3].placeholder}
-          required={inputFields[3].required}
+          validation={inputFields[3].validation}
           register={register}
           errors={errors}
         />
-        <CustomInput
+        {/* <CustomInput
           key={inputFields[4].name}
           name={inputFields[4].name}
           type={inputFields[4].type}
           label={inputFields[4]?.lable}
           placeholder={inputFields[4].placeholder}
-          required={inputFields[4].required}
+          validation={inputFields[4].validation}
           register={register}
           errors={errors}
-        />
-
-        <div>
-          {options.map((option) => (
-            <div key={option} className="flex gap-x-3  items-center ">
+        /> */}
+        <div className="space-y-2">
+          <label htmlFor="">
+            Select Reasons<span className="text-red-600">*</span>{" "}
+          </label>
+          <div className="flex gap-x-4">
+            <div className="flex gap-x-3  items-center ">
               <input
-                type="checkbox"
+                required
+                type="radio"
                 className="size-4"
-                {...register("reasons")}
-                value={option}
-                checked={checkedReasons?.includes(option)}
+                {...register("checked_yes_no")}
+                id="yes"
+                value={"yes"}
+                checked={checked_yes_no?.includes("yes")}
               />
-              <label>{option}</label>
+              <label htmlFor="yes">Yes</label>
             </div>
-          ))}
+            <div className="flex gap-x-3  items-center ">
+              <input
+                required
+                type="radio"
+                className="size-4"
+                {...register("checked_yes_no")}
+                id="no"
+                value={"no"}
+                checked={checked_yes_no?.includes("no")}
+              />
+              <label htmlFor="no">No</label>
+            </div>
+          </div>
         </div>
+        {checked_yes_no === "yes" && (
+          <div>
+            {options.map((option) => (
+              <div key={option} className="flex gap-x-3  items-center ">
+                <input
+                  type="checkbox"
+                  className="size-4"
+                  {...register("reasons")}
+                  value={option}
+                  checked={checkedReasons?.includes(option)}
+                />
+                <label>{option}</label>
+              </div>
+            ))}
+          </div>
+        )}
         <CustomInput
           key={inputFields[5].name}
           name={inputFields[5].name}
           type={inputFields[5].type}
           label={inputFields[5]?.lable}
           placeholder={inputFields[5].placeholder}
-          required={inputFields[5].required}
+          validation={inputFields[5].validation}
           register={register}
           errors={errors}
         />
@@ -239,14 +312,13 @@ const BusinessTrackerForm = () => {
           type={inputFields[6].type}
           label={inputFields[6]?.lable}
           placeholder={inputFields[6].placeholder}
-          required={inputFields[6].required}
+          validation={inputFields[6].validation}
           register={register}
           errors={errors}
         />
 
         <textarea
           placeholder="Why? What is your story?"
-          required
           className="w-full  pl-3 pt-2 resize-none h-[140px] md:h-[200px] outline-none  border border-gray-400 rounded-lg "
           {...register("message")}
         />
