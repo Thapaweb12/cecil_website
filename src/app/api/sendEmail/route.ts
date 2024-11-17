@@ -18,13 +18,13 @@ export async function POST(request: NextRequest) {
   const hour_committed = formData.get("hour_committed") as string | null;
   const monthly_income = formData.get("monthly_income") as string | null;
   const other_cft = formData.get("other_cft") as string | null;
+  const certified_field_trainer = formData.get("certified_field_trainer") as string | null;
   const cft_email = formData.get("cft_email") as string | null;
 
   const reasons = formData.get("reasons") as string | null;
   const parsedReasons = reasons ? JSON.parse(reasons ?? "") : [];
 
-  console.log(parsedReasons, "parsed reason");
-  const type:
+   const type:
     | "digital_card_contact"
     | "living_benefits"
     | "business_opportunity"
@@ -61,9 +61,13 @@ export async function POST(request: NextRequest) {
       type === "business_tracker"
         ? populateTemplate(businessTrackerTemplate, {
             name,
+            email,
             cft_email: cft_email ?? "",
             message: message
               ? `<p><strong>Message:</strong> ${message}</p>`
+              : "",
+            certified_field_trainer: certified_field_trainer
+              ? `<p><strong>Certified Field Trainer:</strong> ${certified_field_trainer}</p>`
               : "",
             checked_yes_no: checked_yes_no
               ? `<p><strong>Checked Yes/No:</strong> ${checked_yes_no}</p>`
