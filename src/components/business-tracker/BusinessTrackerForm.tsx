@@ -22,15 +22,15 @@ const BusinessTrackerForm = () => {
     {
       name: "name",
       type: "text",
-      lable: "Name, Email",
-      placeholder: "Your Name, Email",
+      lable: "Name",
+      placeholder: "Your Name",
       required: true,
     },
     {
       name: "referring_agent",
       type: "text",
       lable: "Referring Agent",
-      placeholder: "If other, input name of CFT here",
+      placeholder: "Enter Name Referrring Agent",
       required: true,
     },
     {
@@ -81,7 +81,6 @@ const BusinessTrackerForm = () => {
   ];
 
   async function handleMailSubmit(data: any) {
-    console.log(data);
     if (data.fake_data) {
       toast.error("Please don't try to spam me");
       setIsLoading(false);
@@ -143,6 +142,16 @@ const BusinessTrackerForm = () => {
           errors={errors}
         />
         <CustomInput
+          key={"email"}
+          name={"email"}
+          type="email"
+          label="Email"
+          placeholder="Enter Your Email"
+          required={true}
+          register={register}
+          errors={errors}
+        />
+        <CustomInput
           key={inputFields[1].name}
           name={inputFields[1].name}
           type={inputFields[1].type}
@@ -158,26 +167,27 @@ const BusinessTrackerForm = () => {
             Certified Field Trainer
           </label>
           <select
-            name="certified_field_trainer"
             id="certified_field_trainer"
+            {...register("certified_field_trainer")}
             defaultValue={"Select Certified Field Trainer"}
             className="border border-slate-400 p-2 rounded-md  w-full"
           >
-            <option value="Gina Criste">Gina Criste</option>
+            <option value="Cecile M. Villacorta">Cecile M. Villacorta</option>
             <option value="Other CFT">Other CFT</option>
           </select>
         </div>
-
-        <CustomInput
-          key={inputFields[2].name}
-          name={inputFields[2].name}
-          type={inputFields[2].type}
-          label={inputFields[2]?.lable}
-          placeholder={inputFields[2].placeholder}
-          required={inputFields[2].required}
-          register={register}
-          errors={errors}
-        />
+        {watch("certified_field_trainer") === "Other CFT" && (
+          <CustomInput
+            key={inputFields[2].name}
+            name={inputFields[2].name}
+            type={inputFields[2].type}
+            label={inputFields[2]?.lable}
+            placeholder={inputFields[2].placeholder}
+            required={inputFields[2].required}
+            register={register}
+            errors={errors}
+          />
+        )}
         <CustomInput
           key={inputFields[3].name}
           name={inputFields[3].name}
@@ -201,7 +211,7 @@ const BusinessTrackerForm = () => {
 
         <div>
           {options.map((option) => (
-            <div key={option} className="flex gap-x-3 ">
+            <div key={option} className="flex gap-x-3  items-center ">
               <input
                 type="checkbox"
                 className="size-4"

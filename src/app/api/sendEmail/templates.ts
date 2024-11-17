@@ -186,14 +186,13 @@ export const businessTrackerTemplate = `<!DOCTYPE html>
         <div class="section-title">Personal Information</div>
         <div class="content">
           <p><strong>Name:</strong> {{name}}</p>
-          <p><strong>Email:</strong> {{cft_email}}</p>
+          <p><strong>Email:</strong> {{email}}</p>
         </div>
       </div>
       <div class="section">
         <div class="section-title">Survey Responses</div>
         <div class="content">
-
-        {{checked_yes_no}}
+    <p><strong>CFT Email:</strong> {{cft_email}}</p>
  {{hour_committed}}
 {{monthly_income}}
 {{other_cft}}
@@ -207,7 +206,9 @@ export const businessTrackerTemplate = `<!DOCTYPE html>
         </div>
       </div>
       <div class="section">
+      {{checked_yes_no}}
         <div class="section-title">Reasons</div>
+
         <div class="content">
           <ul class="reasons-list">
             {{reasons}}
