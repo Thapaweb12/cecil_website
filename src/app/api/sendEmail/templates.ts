@@ -193,6 +193,7 @@ export const businessTrackerTemplate = `<!DOCTYPE html>
         <div class="section-title">Survey Responses</div>
         <div class="content">
     <p><strong>CFT Email:</strong> {{cft_email}}</p>
+ {{certified_field_trainer}}
  {{hour_committed}}
 {{monthly_income}}
 {{other_cft}}

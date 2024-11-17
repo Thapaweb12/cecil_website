@@ -93,7 +93,7 @@ const BusinessTrackerForm = () => {
     },
     {
       name: "hour_committed",
-      type: "text",
+      type: "number",
       placeholder: "Hours committed per week",
     },
   ];
@@ -153,7 +153,7 @@ const BusinessTrackerForm = () => {
 
   const onSubmit = async (data: any) => {
     setIsLoading(true);
-    await handleMailSubmit(data);
+    !isLoading && (await handleMailSubmit(data));
   };
 
   return (
@@ -331,6 +331,7 @@ const BusinessTrackerForm = () => {
       </div>
       <div className="mx-auto">
         <CustomButton
+          disabled={isLoading}
           isLoading={isLoading}
           className="bg-secondary py-1  w-fit px-8 "
           type="submit"
