@@ -89,12 +89,14 @@ const BusinessTrackerForm = () => {
     {
       name: "monthly_income",
       type: "text",
+      lable: "Desired monthly income",
       placeholder: "Desired monthly income",
     },
     {
       name: "hour_committed",
       type: "number",
       placeholder: "Hours committed per week",
+      lable: "Hours committed per week",
     },
   ];
 
@@ -203,7 +205,7 @@ const BusinessTrackerForm = () => {
         />
 
         <div className="flex flex-col gap-2">
-          <label htmlFor="certified_field_trainer">
+          <label htmlFor="certified_field_trainer" className="text-sm">
             Certified Field Trainer<span className="text-red-600">*</span>
           </label>
           <select
@@ -250,7 +252,7 @@ const BusinessTrackerForm = () => {
           errors={errors}
         /> */}
         <div className="space-y-2">
-          <label htmlFor="">
+          <label>
             Select Reasons<span className="text-red-600">*</span>{" "}
           </label>
           <div className="flex gap-x-4">
@@ -316,12 +318,14 @@ const BusinessTrackerForm = () => {
           register={register}
           errors={errors}
         />
-
-        <textarea
-          placeholder="Why? What is your story?"
-          className="w-full  pl-3 pt-2 resize-none h-[140px] md:h-[200px] outline-none  border border-gray-400 rounded-lg "
-          {...register("message")}
-        />
+        <div className="space-y-2">
+          <label className="text-sm">Message</label>
+          <textarea
+            placeholder="Why? What is your story?"
+            className="w-full  pl-3 pt-2 resize-none h-[140px] md:h-[200px] outline-none  border border-gray-400 rounded-lg "
+            {...register("message")}
+          />
+        </div>
         {/* Hidden anti-spam field */}
         <input
           type="text"
