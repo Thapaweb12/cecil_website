@@ -207,8 +207,7 @@ export const businessTrackerTemplate = `<!DOCTYPE html>
         </div>
       </div>
       <div class="section">
-      {{checked_yes_no}}
-        <div class="section-title">Reasons</div>
+         <div class="section-title">Reasons</div>
 
         <div class="content">
           <ul class="reasons-list">
