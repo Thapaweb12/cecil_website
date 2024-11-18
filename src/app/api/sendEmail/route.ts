@@ -14,7 +14,7 @@ export async function POST(request: NextRequest) {
   const phone = formData.get("phone") as string | null;
   const message = formData.get("message") as string | null;
 
-  const checked_yes_no = formData.get("checked_yes_no") as string | null;
+  // const checked_yes_no = formData.get("checked_yes_no") as string | null;
   const hour_committed = formData.get("hour_committed") as string | null;
   const monthly_income = formData.get("monthly_income") as string | null;
   const other_cft = formData.get("other_cft") as string | null;
@@ -69,9 +69,9 @@ export async function POST(request: NextRequest) {
             certified_field_trainer: certified_field_trainer
               ? `<p><strong>Certified Field Trainer:</strong> ${certified_field_trainer}</p>`
               : "",
-            checked_yes_no: checked_yes_no
-              ? `<p><strong>Checked Yes/No:</strong> ${checked_yes_no}</p>`
-              : "",
+            // checked_yes_no: checked_yes_no
+            //   ? `<p><strong>Checked Yes/No:</strong> ${checked_yes_no}</p>`
+            //   : "",
             hour_committed: hour_committed
               ? `<p><strong>Hours Committed:</strong> ${hour_committed}</p>`
               : "",

@@ -18,7 +18,7 @@ const BusinessTrackerForm = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const checkedReasons = watch("reasons") ? watch("reasons") : [];
-  const checked_yes_no = watch("checked_yes_no") ? watch("checked_yes_no") : [];
+  // const checked_yes_no = watch("checked_yes_no") ? watch("checked_yes_no") : [];
   const inputFields = [
     {
       name: "name",
@@ -37,12 +37,12 @@ const BusinessTrackerForm = () => {
       type: "text",
       lable: "Referring Agent",
       placeholder: "Enter Name Referrring Agent",
-      validation: {
-        required: {
-          value: true,
-          message: "Opps! Enter your Referrring Agent Name",
-        },
-      },
+      // validation: {
+      //   required: {
+      //     value: true,
+      //     message: "Opps! Enter your Referrring Agent Name",
+      //   },
+      // },
     },
     {
       name: "other_cft",
@@ -62,16 +62,16 @@ const BusinessTrackerForm = () => {
       type: "email",
       lable: "CFT Email",
       placeholder: "Enter CFT Email",
-      validation: {
-        required: {
-          value: true,
-          message: "Opps! Enter your email",
-        },
-        pattern: {
-          value: "/^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,}$/i",
-          message: "Opps! Enter a Valid email",
-        },
-      },
+      // validation: {
+      //   required: {
+      //     value: true,
+      //     message: "Opps! Enter your email",
+      //   },
+      //   pattern: {
+      //     value: "/^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,}$/i",
+      //     message: "Opps! Enter a Valid email",
+      //   },
+      // },
     },
 
     {
@@ -220,27 +220,29 @@ const BusinessTrackerForm = () => {
           </select>
         </div>
         {watch("certified_field_trainer") === "Other CFT" && (
-          <CustomInput
-            key={inputFields[2].name}
-            name={inputFields[2].name}
-            type={inputFields[2].type}
-            label={inputFields[2]?.lable}
-            placeholder={inputFields[2].placeholder}
-            validation={inputFields[2].validation}
-            register={register}
-            errors={errors}
-          />
+          <>
+            <CustomInput
+              key={inputFields[2].name}
+              name={inputFields[2].name}
+              type={inputFields[2].type}
+              label={inputFields[2]?.lable}
+              placeholder={inputFields[2].placeholder}
+              validation={inputFields[2].validation}
+              register={register}
+              errors={errors}
+            />
+            <CustomInput
+              key={inputFields[3].name}
+              name={inputFields[3].name}
+              type={inputFields[3].type}
+              label={inputFields[3]?.lable}
+              placeholder={inputFields[3].placeholder}
+              validation={inputFields[3].validation}
+              register={register}
+              errors={errors}
+            />
+          </>
         )}
-        <CustomInput
-          key={inputFields[3].name}
-          name={inputFields[3].name}
-          type={inputFields[3].type}
-          label={inputFields[3]?.lable}
-          placeholder={inputFields[3].placeholder}
-          validation={inputFields[3].validation}
-          register={register}
-          errors={errors}
-        />
         {/* <CustomInput
           key={inputFields[4].name}
           name={inputFields[4].name}
@@ -252,10 +254,8 @@ const BusinessTrackerForm = () => {
           errors={errors}
         /> */}
         <div className="space-y-2">
-          <label>
-            Select Reasons<span className="text-red-600">*</span>{" "}
-          </label>
-          <div className="flex gap-x-4">
+          <label>Select Reasons</label>
+          {/* <div className="flex gap-x-4">
             <div className="flex gap-x-3  items-center ">
               <input
                 required
@@ -280,9 +280,7 @@ const BusinessTrackerForm = () => {
               />
               <label htmlFor="no">No</label>
             </div>
-          </div>
-        </div>
-        {checked_yes_no === "yes" && (
+          </div> */}
           <div>
             {options.map((option) => (
               <div key={option} className="flex gap-x-3  items-center ">
@@ -297,7 +295,7 @@ const BusinessTrackerForm = () => {
               </div>
             ))}
           </div>
-        )}
+        </div>
         <CustomInput
           key={inputFields[5].name}
           name={inputFields[5].name}
