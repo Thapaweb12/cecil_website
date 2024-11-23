@@ -1,4 +1,8 @@
-import { ProfileImage, ProfileQuoteImage } from "@/assets/images";
+import {
+  ProfileImage,
+  ProfileImage2,
+  ProfileQuoteImage,
+} from "@/assets/images";
 import Image from "next/image";
 import React from "react";
 import ShareButton from "./ShareButton";
@@ -55,9 +59,9 @@ const DigitalCard = (props: Props) => {
     <div className="mx-auto max-w-[340px] w-full flex flex-col items-center justify-center gap-y-6 py-16 ">
       <div className="w-[240px] flex-shrink-0 h-[320px] relative ">
         <Image
-          src={ProfileImage}
+          src={ProfileImage2}
           alt="Profile Image"
-          className="w-full h-full"
+          className="w-full h-full rounded-2xl"
         />
         <ShareButton />
       </div>

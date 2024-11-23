@@ -45,11 +45,11 @@ const Navbar = () => {
         }  transition-all duration-200 `}
       >
         <div className="flex items-center justify-between relative  ">
-          <Link href={"/"}>
+          <Link href={"/"} className="w-fit">
             <Image
               className={`object-contain ${
-                scroll ? "h-10" : " h-16  "
-              } transition-all duration-200`}
+                scroll ? "h-14" : " h-16  "
+              } transition-all duration-200 w-full`}
               src={LogoImage}
               alt="LogoImage"
             />
