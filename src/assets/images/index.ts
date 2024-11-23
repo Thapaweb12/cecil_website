@@ -1,4 +1,4 @@
-import LogoImage from "./NL_logo.png";
+import LogoImage from "./logo.jpg";
 import ProfileImage from "./ProfileImage.png";
 import ProfileImage1 from "./ProfileImage1.jpeg";
 import ProfileImage2 from "./ProfileImage2.png";
