@@ -55,16 +55,10 @@ const BusinessOpportunity = () => {
         <div className="grid grid-cols-1 gap-x-5 gap-y-10 md:grid-cols-2">
           <iframe
             className="w-full h-[314px]"
-            src="https://www.youtube.com/embed/AnqqBtKbs1A?si=DwcOUkx-ONdV8lHe"
+            src="https://www.youtube.com/embed/1-EtJQoKqOE?si=sTU_8ayszwAAS2cr"
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
-          ></iframe>
-          <iframe
-            src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fgenalyn.catarrojacriste%2Fvideos%2F1709418893209653%2F&show_text=false&t=0"
-            className="w-full h-[250px] sm:h-[400px] md:h-[314px]"
-            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
             allowFullScreen
           ></iframe>
         </div>
@@ -92,11 +86,10 @@ const BusinessOpportunity = () => {
             />
           </Link>
         </div>
-
-        <div className="grid grid-cols-1">
+        <div className="grid grid-cols-1 gap-x-5 gap-y-10 md:grid-cols-2">
           <iframe
-            className="w-full h-[300px] md:h-[500px] xl:h-[600px]"
-            src="https://www.youtube.com/embed/1-EtJQoKqOE?si=sTU_8ayszwAAS2cr"
+            className="w-full h-[314px]"
+            src="https://www.youtube.com/embed/AnqqBtKbs1A?si=DwcOUkx-ONdV8lHe"
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerPolicy="strict-origin-when-cross-origin"
