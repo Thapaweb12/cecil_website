@@ -23,6 +23,12 @@ const DigitalCardForm = () => {
       placeholder: "Your Email Address",
       required: true,
     },
+    {
+      name: "message",
+      type: "text",
+      placeholder: "Your Message",
+      required: true,
+    },
   ];
 
   async function handleMailSubmit(data: any) {
@@ -41,18 +47,24 @@ const DigitalCardForm = () => {
         method: "POST",
         body: formData,
       });
-      const responseData = await response.json();
+      const { adminEmailStatus, feedbackEmailStatus } = await response.json();
 
-      if (!response.ok) {
-        setIsLoading(false);
-        throw new Error(`Error: ${response.status}`);
+      if (adminEmailStatus === "success") {
+        toast.success("Email sent successfully!");
+      } else {
+        toast.error("Failed to send email.");
       }
 
-      toast.success(responseData.message);
+      // if (feedbackEmailStatus === "success") {
+      //   toast.success("Feedback email sent successfully!");
+      // } else {
+      //   toast.error("Failed to send feedback email.");
+      // }
+
       setIsLoading(false);
       reset();
     } catch (err) {
-      console.error("Error:", err);
+      console.log("Error:", err);
       toast.error("Something went wrong!");
     }
   }
@@ -67,6 +79,10 @@ const DigitalCardForm = () => {
       onSubmit={handleSubmit(onSubmit)}
       className="flex flex-col w-full px-4"
     >
+      <p className="text-center text-2xl font-medium text-gray-600 pb-5">
+        {" "}
+        Sign up here
+      </p>
       <div className="flex flex-col gap-2 md:gap-4 w-full">
         {inputFields.map((field) => (
           <CustomInput

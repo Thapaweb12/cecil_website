@@ -57,18 +57,30 @@ const ContactForm = ({ type }: Props) => {
         method: "POST",
         body: formData,
       });
-      const responseData = await response.json();
 
-      if (!response.ok) {
-        setIsLoading(false);
-        throw new Error(`Error: ${response.status}`);
+      const { adminEmailStatus, feedbackEmailStatus } = await response.json();
+
+      // if (!ok) {
+      //   setIsLoading(false);
+      //   throw new Error(`Error: ${response.status}`);
+      // }
+
+      if (adminEmailStatus === "success") {
+        toast.success("Email sent successfully!");
+      } else {
+        toast.error("Failed to send email.");
       }
 
-      toast.success(responseData.message);
+      // if (feedbackEmailStatus === "success") {
+      //   toast.success("Feedback email sent successfully!");
+      // } else {
+      //   toast.error("Failed to send feedback email.");
+      // }
+
       setIsLoading(false);
       reset();
     } catch (err) {
-      console.error("Error:", err);
+      console.log("Error:", err);
       setIsLoading(false);
       toast.error("Something went wrong!");
     }
