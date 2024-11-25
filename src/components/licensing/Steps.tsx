@@ -8,21 +8,20 @@ const steps = [
         <p>
           Enroll now at{" "}
           <a
-            href="https://www.xceltesting.com"
+            href="https://partners.xcelsolutions.com/PFAVillacorta"
             className="text-blue-600 underline"
             target="_blank"
             rel="noopener noreferrer"
           >
-            xceltesting.com
+            xcelsolutions.com
           </a>
           .
         </p>
         <ol className="list-decimal pl-4">
-          <li> insurance pre-licensing bundle courses</li>
+          <li> Insurance Pre-Licensing bundle courses</li>
           <li>Select your state.</li>
-          <li>select pre-licensing education (life insurance ONLY)</li>
-          <li>proceed to checkout & input discount code PFA (-179.05)</li>
-        </ol>
+          <li>Select Licensing education (life ONLY)</li>
+         </ol>
       </>
     ),
   },
@@ -153,9 +152,9 @@ const StepCard: FC<{ step: (typeof steps)[0] }> = ({ step }) => (
 
 const StepsGrid: FC = () => (
   <div className="min-h-screen bg-gray-100 py-12 px-2 sm:px-6">
-    <h1 className="text-3xl font-extrabold text-center text-gray-800 mb-12">
+    {/* <h1 className="text-3xl font-extrabold text-center text-gray-800 mb-12">
       Use Discount Code: <span className="text-red-600">PFACRISTE</span>
-    </h1>
+    </h1> */}
     <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 max-w-7xl mx-auto">
       {steps.map((step, index) => (
         <StepCard key={index} step={step} />

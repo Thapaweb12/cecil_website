@@ -81,7 +81,7 @@ const DigitalCardForm = () => {
     >
       <p className="text-center text-2xl font-medium text-gray-600 pb-5">
         {" "}
-        Sign up here
+        Sign Up Here
       </p>
       <div className="flex flex-col gap-2 md:gap-4 w-full">
         {inputFields.map((field) => (
