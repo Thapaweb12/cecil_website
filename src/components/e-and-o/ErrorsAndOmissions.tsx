@@ -4,8 +4,8 @@ import { FC } from "react";
 const ErrorsAndOmissions: FC = () => {
   const data = [
     {
-      label: <div>PURCHASE E&O</div>,
-      href: "https://pfaonline.com/login.php?ref=%2Fpfastore",
+      label: <div> xcelsolutions.com</div>,
+      href: "https://partners.xcelsolutions.com/PFAVillacorta",
     },
     {
       label: "APPOINTED STEPS",
@@ -30,11 +30,6 @@ const ErrorsAndOmissions: FC = () => {
               {item.label}
             </div>
             <ChevronDoubleRightIcon className="text-gray-800 size-12" />
-              {index === 0 && (
-                <span className="text-red-600 text-xs">
-                  Invalid Link: Plese provide new link
-                </span>
-              )}
           </a>
         ))}
       </div>

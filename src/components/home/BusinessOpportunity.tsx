@@ -110,8 +110,23 @@ const BusinessOpportunity = () => {
               allowFullScreen
             ></iframe>
           </div>
+          <div className="flex flex-col gap-y-2">
+            <h2 className="text-base font-bold">Retirement Risk Zone</h2>
+
+            <Link
+              target="_blank"
+              href={"https://nationallife.wistia.com/medias/omvlavz5en"}
+              className="w-full md:h-[320px]"
+            >
+              <Image
+                src={ReitrementReadinessImage}
+                alt="Retirement Readiness"
+                className="h-full w-full object-contain"
+              />
+            </Link>
+          </div>
         </div>
-        <div className="grid grid-cols-1 gap-x-5 gap-y-10 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-x-5 gap-y-10 ">
           <div>
             <h2 className="text-base pt-3 font-bold">
               Guaranteed lifetime income rider {`(GLIR)`}
@@ -125,21 +140,6 @@ const BusinessOpportunity = () => {
               <Image
                 src={AreYouReadyImage}
                 alt="Are you redy"
-                className="h-full w-full object-contain"
-              />
-            </Link>
-          </div>
-          <div>
-            <h2 className="text-base pt-3 font-bold">Retirement Risk Zone</h2>
-
-            <Link
-              target="_blank"
-              href={"https://nationallife.wistia.com/medias/omvlavz5en"}
-              className="w-full md:h-[314px]"
-            >
-              <Image
-                src={ReitrementReadinessImage}
-                alt="Retirement Readiness"
                 className="h-full w-full object-contain"
               />
             </Link>
