@@ -38,7 +38,7 @@ const BusinessOpportunity = () => {
         <div className="space-y-8">
           <div className="grid grid-cols-1 gap-x-5 gap-y-10 md:grid-cols-2">
             <div className="space-y-4">
-              <h2 className="text-base font-semibold">
+              <h2 className="text-base capitalize font-semibold">
                 Jessica: Living Benefits
               </h2>
               <iframe
@@ -51,7 +51,7 @@ const BusinessOpportunity = () => {
               />
             </div>
             <div className="space-y-4">
-              <h2 className="text-base font-semibold">
+              <h2 className="text-base capitalize font-semibold">
                 A Larger Purpose - Eric&#39;s Living Benefits Story
               </h2>
               <iframe
@@ -66,7 +66,7 @@ const BusinessOpportunity = () => {
           </div>
           <div className="grid grid-cols-1 gap-x-5 gap-y-10 md:grid-cols-2">
             <div className="space-y-4">
-              <h2 className="text-base font-semibold">
+              <h2 className="text-base capitalize font-semibold">
                 Living Benefits helped him in the fight against cancer
               </h2>
               <iframe
@@ -79,9 +79,9 @@ const BusinessOpportunity = () => {
               ></iframe>
             </div>
             <div className="space-y-4">
-              <h2 className="text-base font-semibold">
-                &#39;She Will Be My Future&#39;: The Tran Family&#39;s Living
-                Benefit Story
+              <h2 className="text-base capitalize font-semibold">
+                She Will Be My Future: The Tran Family&#39;s Living Benefit
+                Story
               </h2>
               <iframe
                 className="w-full h-[314px]"
@@ -98,7 +98,7 @@ const BusinessOpportunity = () => {
         <h2 className="text-3xl font-bold pt-6">Retirement Benefits</h2>
         <div className="grid grid-cols-1 gap-x-5 gap-y-10 md:grid-cols-2">
           <div className="space-y-4">
-            <h2 className="text-base font-semibold">
+            <h2 className="text-base capitalize font-semibold">
               Are you overwhelmed by saving for retirement?
             </h2>
             <iframe
@@ -111,7 +111,9 @@ const BusinessOpportunity = () => {
             ></iframe>
           </div>
           <div className="flex flex-col gap-y-2">
-            <h2 className="text-base font-bold">Retirement Risk Zone</h2>
+            <h2 className="text-base capitalize font-bold">
+              Retirement Risk Zone
+            </h2>
 
             <Link
               target="_blank"
@@ -128,7 +130,7 @@ const BusinessOpportunity = () => {
         </div>
         <div className="grid grid-cols-1 gap-x-5 gap-y-10 ">
           <div>
-            <h2 className="text-base pt-3 font-bold">
+            <h2 className="text-base capitalize pt-3 font-bold">
               Guaranteed lifetime income rider {`(GLIR)`}
             </h2>
 
