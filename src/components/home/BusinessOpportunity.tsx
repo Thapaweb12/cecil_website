@@ -34,7 +34,7 @@ const BusinessOpportunity = () => {
         />
       </div>
       <div className="space-y-4">
-        <h2 className="text-3xl font-bold pt-6">Living Benifits</h2>
+        <h2 className="text-3xl font-bold pt-6">Living Benefits</h2>
         <div className="space-y-8">
           <div className="grid grid-cols-1 gap-x-5 gap-y-10 md:grid-cols-2">
             <div className="space-y-4">
@@ -95,7 +95,7 @@ const BusinessOpportunity = () => {
           </div>
         </div>
 
-        <h2 className="text-3xl font-bold pt-6">Retirement Benifits</h2>
+        <h2 className="text-3xl font-bold pt-6">Retirement Benefits</h2>
         <div className="grid grid-cols-1 gap-x-5 gap-y-10 md:grid-cols-2">
           <div className="space-y-4">
             <h2 className="text-base font-semibold">
@@ -139,7 +139,7 @@ const BusinessOpportunity = () => {
             >
               <Image
                 src={AreYouReadyImage}
-                alt="Are you redy"
+                alt="Are you ready"
                 className="h-full w-full object-contain"
               />
             </Link>
