@@ -98,6 +98,18 @@ const BusinessTrackerForm = () => {
       placeholder: "Hours committed per week",
       lable: "Hours committed per week",
     },
+    {
+      name: "pfa_id",
+      type: "text",
+      lable: "PFA Id",
+      placeholder: "Your PFA Id",
+      validation: {
+        required: {
+          value: true,
+          message: "Oops! Enter your PFA Id",
+        },
+      },
+    },
   ];
 
   const options = [
@@ -210,7 +222,16 @@ const BusinessTrackerForm = () => {
           register={register}
           errors={errors}
         />
-
+        <CustomInput
+          key={inputFields[7].name}
+          name={inputFields[7].name}
+          type={inputFields[7].type}
+          label={inputFields[7]?.lable}
+          placeholder={inputFields[7].placeholder}
+          validation={inputFields[7]?.validation}
+          register={register}
+          errors={errors}
+        />
         <div className="flex flex-col gap-2">
           <label htmlFor="certified_field_trainer" className="text-sm">
             Certified Field Trainer<span className="text-red-600">*</span>

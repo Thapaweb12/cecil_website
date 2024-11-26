@@ -20,7 +20,10 @@ const steps = [
         <ol className="list-decimal pl-4">
           <li> Insurance Pre-Licensing bundle courses</li>
           <li>Select your state.</li>
-          <li>Select Licensing education (life ONLY)</li>
+          <li>
+            Select Licensing education{" "}
+            <span className="text-red-600">{` (LIFE Only)`}</span>
+          </li>
         </ol>
       </>
     ),

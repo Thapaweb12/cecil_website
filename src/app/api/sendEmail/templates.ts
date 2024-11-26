@@ -187,12 +187,13 @@ export const businessTrackerTemplate = `<!DOCTYPE html>
         <div class="content">
           <p><strong>Name:</strong> {{name}}</p>
           <p><strong>Email:</strong> {{email}}</p>
+          <p><strong>PFA Id:</strong> {{pfa_id}}</p>
         </div>
       </div>
       <div class="section">
         <div class="section-title">Survey Responses</div>
         <div class="content">
-    <p><strong>CFT Email:</strong> {{cft_email}}</p>
+  {{cft_email}}
  {{certified_field_trainer}}
  {{hour_committed}}
 {{monthly_income}}

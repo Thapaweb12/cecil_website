@@ -17,8 +17,11 @@ export async function POST(request: NextRequest) {
   const hour_committed = formData.get("hour_committed") as string | null;
   const monthly_income = formData.get("monthly_income") as string | null;
   const other_cft = formData.get("other_cft") as string | null;
-  const certified_field_trainer = formData.get("certified_field_trainer") as string | null;
+  const certified_field_trainer = formData.get("certified_field_trainer") as
+    | string
+    | null;
   const cft_email = formData.get("cft_email") as string | null;
+  const pfa_id = formData.get("pfa_id") as string | null;
 
   const reasons = formData.get("reasons") as string | null;
   const parsedReasons = reasons ? JSON.parse(reasons ?? "") : [];
@@ -64,8 +67,10 @@ export async function POST(request: NextRequest) {
         ? populateTemplate(businessTrackerTemplate, {
             name,
             email,
-            cft_email: cft_email ?? "",
-            message: message ? `<p><strong>Message:</strong> ${message}</p>` : "",
+            pfa_id: pfa_id ?? "",
+            message: message
+              ? `<p><strong>Message:</strong> ${message}</p>`
+              : "",
             certified_field_trainer: certified_field_trainer
               ? `<p><strong>Certified Field Trainer:</strong> ${certified_field_trainer}</p>`
               : "",
@@ -75,7 +80,12 @@ export async function POST(request: NextRequest) {
             monthly_income: monthly_income
               ? `<p><strong>Monthly Income:</strong> ${monthly_income}</p>`
               : "",
-            other_cft: other_cft ? `<p><strong>Other CFT:</strong> ${other_cft}</p>` : "",
+            other_cft: other_cft
+              ? `<p><strong>Other CFT:</strong> ${other_cft}</p>`
+              : "",
+            cft_email: cft_email
+              ? `<p><strong>CFT Email:</strong> ${other_cft}</p>`
+              : "",
             reasons:
               parsedReasons && Array.isArray(parsedReasons)
                 ? `${parsedReasons?.map((item) => `<li>${item}</li>`).join("")}`
@@ -86,7 +96,9 @@ export async function POST(request: NextRequest) {
             name,
             email,
             phone: phone ? `<p><strong>Phone:</strong> ${phone}</p>` : "",
-            message: message ? `<p><strong>Message:</strong> ${message}</p>` : "",
+            message: message
+              ? `<p><strong>Message:</strong> ${message}</p>`
+              : "",
           });
 
     await transporter.sendMail({
