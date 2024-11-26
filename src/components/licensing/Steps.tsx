@@ -21,7 +21,7 @@ const steps = [
           <li> Insurance Pre-Licensing bundle courses</li>
           <li>Select your state.</li>
           <li>Select Licensing education (life ONLY)</li>
-         </ol>
+        </ol>
       </>
     ),
   },

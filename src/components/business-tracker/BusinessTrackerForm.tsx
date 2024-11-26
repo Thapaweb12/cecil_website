@@ -28,7 +28,7 @@ const BusinessTrackerForm = () => {
       validation: {
         required: {
           value: true,
-          message: "Opps! Enter your name",
+          message: "Oops! Enter your name",
         },
       },
     },
@@ -36,11 +36,11 @@ const BusinessTrackerForm = () => {
       name: "referring_agent",
       type: "text",
       lable: "Referring Agent",
-      placeholder: "Enter Name Referrring Agent",
+      placeholder: "Enter Name Referring Agent",
       // validation: {
       //   required: {
       //     value: true,
-      //     message: "Opps! Enter your Referrring Agent Name",
+      //     message: "Oops! Enter your Referring Agent Name",
       //   },
       // },
     },
@@ -52,7 +52,7 @@ const BusinessTrackerForm = () => {
       validation: {
         required: {
           value: true,
-          message: "Opps! Enter your name of CFT",
+          message: "Oops! Enter your name of CFT",
         },
       },
     },
@@ -65,11 +65,11 @@ const BusinessTrackerForm = () => {
       // validation: {
       //   required: {
       //     value: true,
-      //     message: "Opps! Enter your email",
+      //     message: "Oops! Enter your email",
       //   },
       //   pattern: {
       //     value: "/^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,}$/i",
-      //     message: "Opps! Enter a Valid email",
+      //     message: "Oops! Enter a Valid email",
       //   },
       // },
     },
@@ -81,7 +81,7 @@ const BusinessTrackerForm = () => {
       validation: {
         required: {
           value: true,
-          message: "Opps! Select Option",
+          message: "Oops! Select Option",
         },
       },
     },
@@ -190,11 +190,11 @@ const BusinessTrackerForm = () => {
           validation={{
             required: {
               value: true,
-              message: "Opps! Enter your email",
+              message: "Oops! Enter your email",
             },
             pattern: {
               value: "/^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,}$/i",
-              message: "Opps! Enter a Valid email",
+              message: "Oops! Enter a Valid email",
             },
           }}
           register={register}
