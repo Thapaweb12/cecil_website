@@ -65,7 +65,7 @@ const DigitalCard = (props: Props) => {
         />
         <ShareButton />
       </div>
-      <div className="w-full flex-shrink-0 max-w-[270px]">
+      <div className="w-full flex-shrink-0 max-w-[250px]">
         <h1 className="text-[26px] font-bold text-center">
           Cecile M. Villacorta
         </h1>
