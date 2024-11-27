@@ -80,8 +80,7 @@ const DigitalCardForm = () => {
       className="flex flex-col w-full px-4"
     >
       <p className="text-center text-2xl font-medium text-gray-600 pb-5">
-        {" "}
-        Sign Up Here
+        Contact Me
       </p>
       <div className="flex flex-col gap-2 md:gap-4 w-full">
         {inputFields.map((field) => (
@@ -109,7 +108,7 @@ const DigitalCardForm = () => {
         className="bg-primary py-1 "
         type="submit"
       >
-        Send Me Your Info
+        Submit
       </CustomButton>
     </form>
   );
