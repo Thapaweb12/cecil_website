@@ -1,8 +1,4 @@
-import {
-  ProfileImage,
-  ProfileImage2,
-  ProfileQuoteImage,
-} from "@/assets/images";
+import { ProfileImage2, ProfileQuoteImage } from "@/assets/images";
 import Image from "next/image";
 import React from "react";
 import ShareButton from "./ShareButton";
