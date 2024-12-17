@@ -46,10 +46,10 @@ export async function POST(request: NextRequest) {
   // Create email transporter
   const transporter = nodemailer.createTransport({
     host: process.env.EMAIL_HOST,
-    port: 587,
-    secure: false,
+    port: 465,
+    secure: true,
     tls: {
-      rejectUnauthorized: false,
+      rejectUnauthorized: true,
     },
     auth: {
       user: process.env.EMAIL_HOST_USER,
@@ -102,7 +102,7 @@ export async function POST(request: NextRequest) {
           });
 
     await transporter.sendMail({
-      from: email,
+      from: process.env.EMAIL_HOST_USER,
       to: process.env.EMAIL_RECIPIENT,
       subject: `Website activity from ${email}`,
       html: adminHtml,
