@@ -2,6 +2,7 @@
 
 import CustomButton from "@/components/common/CustomButton";
 import CustomInput from "@/components/common/CustomInput";
+import { mailServiceUrl } from "@/components/constants/apiConstant";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
@@ -53,7 +54,7 @@ const ContactForm = ({ type }: Props) => {
       formData.append("phone", data.phone);
       formData.append("message", data.message);
 
-      const response = await fetch("/api/sendEmail", {
+      const response = await fetch(mailServiceUrl, {
         method: "POST",
         body: formData,
       });

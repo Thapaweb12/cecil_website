@@ -5,6 +5,7 @@ import CustomInput from "@/components/common/CustomInput";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
+import { mailServiceUrl } from "../constants/apiConstant";
 
 const BusinessTrackerForm = () => {
   const {
@@ -144,7 +145,7 @@ const BusinessTrackerForm = () => {
         }
       });
       formData.append("type", "business_tracker");
-      const response = await fetch("/api/sendEmail", {
+      const response = await fetch(mailServiceUrl, {
         method: "POST",
         body: formData,
       });

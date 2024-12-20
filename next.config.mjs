@@ -44,3 +44,7 @@ const securityHeaders = [
 ];
 
 export default nextConfig;
+
+module.exports = {
+  output: "export",
+};

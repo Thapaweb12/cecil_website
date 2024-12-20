@@ -5,6 +5,7 @@ import CustomInput from "@/components/common/CustomInput";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
+import { mailServiceUrl } from "../constants/apiConstant";
 
 const DigitalCardForm = () => {
   const {
@@ -43,7 +44,7 @@ const DigitalCardForm = () => {
 
       formData.append("email", data.email);
 
-      const response = await fetch("/api/sendEmail", {
+      const response = await fetch(mailServiceUrl, {
         method: "POST",
         body: formData,
       });
