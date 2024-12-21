@@ -6,6 +6,10 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   generateEtags: false,
+  images: {
+    unoptimized: true, // Disable image optimization for static exports
+  },
+  output: "export",
   webpack(config) {
     const fileLoaderRule = config.module.rules.find((rule) =>
       rule.test?.test?.(".svg")
@@ -44,7 +48,3 @@ const securityHeaders = [
 ];
 
 export default nextConfig;
-
-module.exports = {
-  output: "export",
-};
