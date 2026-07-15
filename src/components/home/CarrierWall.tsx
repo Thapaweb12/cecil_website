@@ -16,7 +16,7 @@ type Carrier = {
 const carriers: Carrier[] = [
   { name: "Ethos", logo: "/carriers/ethos.png" },
   { name: "North American", logo: "/carriers/north-american.png" },
-  { name: "Augustar" },
+  { name: "Augustar", logo: "/carriers/augustar.png" },
   { name: "Athene", logo: "/carriers/athene.svg" },
   { name: "Nationwide", logo: "/carriers/nationwide.svg" },
   { name: "Corebridge Financial", logo: "/carriers/corebridge.svg" },
