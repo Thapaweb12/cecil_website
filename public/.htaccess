@@ -1,0 +1,60 @@
+# ============================================================================
+# Villacorta Insurance Services — Apache config for Hostinger (static export)
+# Security headers, clean URLs, compression and caching.
+# This file is copied into the exported `out/` folder at build time.
+# ============================================================================
+
+# ---------------------------------------------------------------- Security ---
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "geolocation=(), camera=(), microphone=(), payment=()"
+  Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://thapa-web-mail-service.vercel.app; frame-src 'self' https://www.google.com https://maps.google.com; form-action 'self' https://thapa-web-mail-service.vercel.app; base-uri 'self'; object-src 'none'; upgrade-insecure-requests"
+  # Remove server fingerprint where allowed
+  Header unset X-Powered-By
+</IfModule>
+
+# ---------------------------------------------------------------- Clean URLs -
+# Serve /contact for /contact.html, keep a proper 404.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # If the request maps to an existing file/dir, serve it as-is.
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Otherwise, if "<request>.html" exists, serve it.
+  RewriteCond %{REQUEST_FILENAME}.html -f
+  RewriteRule ^(.*)$ $1.html [L]
+</IfModule>
+
+ErrorDocument 404 /404.html
+
+# ---------------------------------------------------------------- Compression
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml
+  AddOutputFilterByType DEFLATE application/javascript application/x-javascript
+  AddOutputFilterByType DEFLATE application/json application/xml
+  AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# ---------------------------------------------------------------- Caching ----
+<IfModule mod_expires.c>
+  ExpiresActive On
+  # Hashed, immutable build assets — cache hard.
+  <FilesMatch "\.(js|css|woff2?|ttf|eot)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  # Images.
+  <FilesMatch "\.(png|jpe?g|gif|svg|webp|ico)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+  # HTML — always revalidate so content updates show immediately.
+  <FilesMatch "\.(html)$">
+    Header set Cache-Control "public, max-age=0, must-revalidate"
+  </FilesMatch>
+</IfModule>

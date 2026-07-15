@@ -75,6 +75,7 @@ const CustomInput = ({
         >
           {leftIcon && leftIcon}
           <input
+            aria-label={label || (props.placeholder as string) || name}
             className={twMerge(
               " placeholder:text-base w-full  outline-none  " + inputClassName
             )}

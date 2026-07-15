@@ -1,101 +1,107 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useState } from "react";
 
 import { CrossIcon, HamBurgerIcon } from "@/assets/icons";
-
 import { navLinks, socialData } from "./staticdata/navdata";
 import { LogoImage } from "@/assets/images";
 
 type Props = {
-  scroll: boolean;
+  scrolled: boolean;
 };
 
-const MobileNavbar = ({ scroll }: Props) => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
-
+const MobileNavbar = ({ scrolled }: Props) => {
+  const [open, setOpen] = useState(false);
   const pathname = usePathname();
+  const close = () => setOpen(false);
+
   return (
-    <div
-      className={`block  ${
-        scroll ? "py-3" : "py-5"
-      }  transition-all duration-200 lg:hidden`}
-    >
-      <div className="container flex items-center justify-between ">
-        <Link href={"/"}>
+    <div className="lg:hidden">
+      <div className="container flex h-[64px] items-center justify-between">
+        <Link href="/" aria-label="Villacorta Insurance Services — home">
           <Image
-            className={`object-contain h-16 w-fit  transition-all duration-200`}
             src={LogoImage}
-            alt="LogoImage"
+            alt="Vantage Financial Alliance"
+            className="h-8 w-auto object-contain"
             priority
           />
         </Link>
-        <button onClick={() => setIsSidebarOpen((prev) => !prev)}>
-          <HamBurgerIcon
-            className={` ${
-              isSidebarOpen ? "size-0" : "size-8"
-            } transition-all duration-200 text-foundation-gray-g-700 snap-center`}
-          />
+        <button
+          onClick={() => setOpen(true)}
+          aria-label="Open menu"
+          className="rounded-lg p-1.5 text-navy hover:bg-surface-2"
+        >
+          <HamBurgerIcon className="size-7" />
         </button>
       </div>
+
+      {/* Overlay */}
       <div
-        className={`${
-          isSidebarOpen ? "w-full  min-[600px]:w-[70%] " : "w-0"
-        }  absolute right-0 top-0 z-10 h-screen overflow-x-hidden bg-slate-200 py-3 transition-all duration-200`}
+        onClick={close}
+        className={`fixed inset-0 z-40 bg-navy-deep/40 transition-opacity duration-200 ${
+          open ? "opacity-100" : "pointer-events-none opacity-0"
+        }`}
+      />
+
+      {/* Drawer */}
+      <div
+        className={`fixed right-0 top-0 z-50 h-full w-[82%] max-w-sm bg-surface shadow-lift transition-transform duration-300 ${
+          open ? "translate-x-0" : "translate-x-full"
+        }`}
       >
-        <div className="py-3">
-          <div className="flex items-center justify-between  min-[600px]:justify-end px-3">
-            <Link href={"/"} onClick={() => setIsSidebarOpen((prev) => !prev)}>
-              <Image
-                className={`object-contain h-16 w-fit min-[600px]:w-0 " transition-all duration-200`}
-                src={LogoImage}
-                alt="LogoImage"
-                priority
-              />
+        <div className="flex items-center justify-between border-b border-line px-5 py-4">
+          <Link href="/" onClick={close}>
+            <Image
+              src={LogoImage}
+              alt="Vantage Financial Alliance"
+              className="h-8 w-auto object-contain"
+            />
+          </Link>
+          <button
+            onClick={close}
+            aria-label="Close menu"
+            className="rounded-lg p-1.5 text-navy hover:bg-surface-2"
+          >
+            <CrossIcon className="size-7" />
+          </button>
+        </div>
+
+        <nav className="flex flex-col px-3 py-3">
+          {navLinks.map((item, idx) => (
+            <Link
+              key={idx}
+              onClick={close}
+              href={item.link}
+              className={`rounded-lg px-3 py-3 text-base transition-colors ${
+                pathname === item.link
+                  ? "bg-surface-2 font-semibold text-navy"
+                  : "font-medium text-body hover:bg-surface-2"
+              }`}
+            >
+              {item.title}
             </Link>
-            <button onClick={() => setIsSidebarOpen(false)}>
-              <CrossIcon
-                className={` ${
-                  isSidebarOpen ? "size-8" : "size-0"
-                } transition-all duration-200 text-foundation-gray-g-700 snap-center`}
-              />
-            </button>
-          </div>
-          <div className="pt-4  min-[600px]:pt-0">
-            {Array.isArray(navLinks) &&
-              navLinks?.map((item, idx) => {
-                return (
-                  <div className="border-b border-gray-400" key={idx}>
-                    <Link
-                      onClick={() => {
-                        setIsSidebarOpen(false);
-                      }}
-                      href={item.link}
-                      className="w-full"
-                    >
-                      <p
-                        className={`px-3 py-3 text-lg  ${
-                          pathname === item?.link
-                            ? "font-semibold text-foundation-gray-g-800"
-                            : "text-foundation-gray-g-600 "
-                        } `}
-                      >
-                        {item.title}
-                      </p>
-                    </Link>
-                  </div>
-                );
-              })}
-            <div className="flex gap-6  pt-4 px-3 ">
-              {socialData.map((item, index) => {
-                return (
-                  <Link target="_blank" href={item.link ?? "/"} key={index}>
-                    {item.icon}
-                  </Link>
-                );
-              })}
-            </div>
+          ))}
+        </nav>
+
+        <div className="px-5 pt-3">
+          <Link href="/contact" onClick={close} className="btn-primary w-full">
+            Free Consultation
+          </Link>
+          <div className="mt-6 flex gap-5">
+            {socialData.map((item, index) => (
+              <Link
+                target="_blank"
+                href={item.link ?? "/"}
+                key={index}
+                aria-label={item.label}
+                className="text-secondary hover:text-teal"
+              >
+                {item.icon}
+              </Link>
+            ))}
           </div>
         </div>
       </div>

@@ -2,18 +2,119 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ============================================================================
+   VANTAGE / VILLACORTA — DESIGN TOKENS
+   Re-skin the whole site by editing the values in this :root block.
+   Colors are expressed as raw "R G B" triplets so Tailwind can apply opacity.
+   ========================================================================== */
 :root {
-  --primary: rgb(0, 185, 181);
-  --secondary: rgb(16, 111, 154);
-  --dark-blue: rgb(36, 56, 83);
+  /* Brand palette (from the "Protect What Matters Most" flyer) */
+  --teal: 15 181 177;          /* #0FB5B1 primary teal            */
+  --teal-600: 12 150 147;      /* deeper teal for hovers          */
+  --teal-700: 11 120 118;
+  --secondary: 16 111 154;     /* #106F9A mid blue                */
+  --navy: 30 49 79;            /* #1E314F                          */
+  --navy-deep: 15 33 56;       /* #0F2138 dark bands               */
+
+  /* Neutrals / surfaces */
+  --ink: 22 34 54;             /* headings                         */
+  --body: 60 72 90;            /* body copy                        */
+  --muted: 108 122 143;        /* secondary text                   */
+  --surface: 255 255 255;      /* page background                  */
+  --surface-2: 244 248 251;    /* alternating section background   */
+  --surface-3: 235 242 248;
+  --line: 224 232 240;         /* hairline borders                 */
+
+  /* Back-compat aliases (older components referenced these names) */
+  --primary: rgb(15, 181, 177);
+  --dark-blue: rgb(30, 49, 79);
+
+  /* Effects */
+  --radius: 16px;
+  --shadow-sm: 0 1px 2px rgba(16, 33, 56, 0.06),
+    0 1px 3px rgba(16, 33, 56, 0.05);
+  --shadow-md: 0 8px 24px -8px rgba(16, 33, 56, 0.18);
+  --shadow-lg: 0 24px 60px -18px rgba(16, 33, 56, 0.30);
+
+  /* Signature gradients */
+  --grad-brand: linear-gradient(
+    135deg,
+    rgb(var(--secondary)) 0%,
+    rgb(var(--teal)) 100%
+  );
+  --grad-navy: linear-gradient(
+    155deg,
+    rgb(var(--navy)) 0%,
+    rgb(var(--navy-deep)) 100%
+  );
 }
-/* 
-@media (prefers-color-scheme: dark) {
-  :root {
+
+/* ---------------------------------------------------------------- base ---- */
+html {
+  scroll-behavior: smooth;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+::selection {
+  background: rgb(var(--teal) / 0.22);
+}
+
+/* --------------------------------------------------------- components ---- */
+@layer components {
+  /* Vertical rhythm for page sections */
+  .section {
+    @apply py-14 md:py-20;
+  }
+
+  /* Small uppercase label that sits above a headline */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-semibold uppercase
+      tracking-[0.18em] text-secondary;
+  }
+  .eyebrow::before {
+    content: "";
+    @apply inline-block h-px w-6 bg-teal;
+  }
+
+  /* Elegant serif display headline */
+  .headline {
+    @apply font-serif font-bold text-ink leading-[1.08] tracking-tight;
+  }
+  .script {
+    @apply font-script text-teal leading-none;
+  }
+
+  /* Cards */
+  .card {
+    @apply rounded-2xl bg-surface border border-line shadow-[var(--shadow-sm)];
+  }
+
+  /* Buttons */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full
+      px-6 py-3 text-sm font-semibold transition-all duration-200
+      hover:-translate-y-0.5 focus-visible:outline-none
+      focus-visible:ring-2 focus-visible:ring-teal/50 focus-visible:ring-offset-2;
+  }
+  .btn-primary {
+    @apply btn text-white shadow-[var(--shadow-md)];
+    background-image: var(--grad-brand);
+  }
+  .btn-navy {
+    @apply btn bg-navy text-white shadow-[var(--shadow-md)] hover:bg-navy-deep;
+  }
+  .btn-outline {
+    @apply btn border border-line bg-surface text-ink hover:border-teal
+      hover:text-teal;
+  }
+  .btn-ghost-light {
+    @apply btn border border-white/40 text-white hover:bg-white/10;
   }
 }
-  */
 
+/* Legacy helper kept from the original template */
 .custom-outline {
-  -webkit-text-stroke: 1px white; /* Adds a 1px black outline */
+  -webkit-text-stroke: 1px white;
 }

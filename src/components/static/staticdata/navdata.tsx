@@ -1,3 +1,9 @@
+import {
+  FacebookFilledIcon,
+  InstagramFilledIcon,
+  LinkedInFilledIcon,
+} from "@/assets/icons";
+
 interface InavLinks {
   title: string;
   link: string;
@@ -17,40 +23,25 @@ export const navLinks: InavLinks[] = [
     link: "/licensing",
   },
   {
-    title: "E and O",
-    link: "/e-and-o",
-  },
-  {
     title: "Contact",
     link: "/contact",
   },
 ];
 
-import {
-  FacebookFilledIcon,
-  InstagramFilledIcon,
-  LinkedInFilledIcon,
-} from "@/assets/icons";
 export const socialData = [
   {
-    icon: <FacebookFilledIcon className="text-primary size-7" />,
+    label: "Facebook",
+    icon: <FacebookFilledIcon className="size-6" />,
     link: "https://www.facebook.com/profile.php?id=100007386450316",
   },
   {
-    icon: <LinkedInFilledIcon className="text-primary size-7" />,
+    label: "LinkedIn",
+    icon: <LinkedInFilledIcon className="size-6" />,
     link: "https://www.linkedin.com/in/cecile-m-villacorta-rn-2340b371/",
   },
   {
-    icon: <InstagramFilledIcon className="text-primary size-7" />,
+    label: "Instagram",
+    icon: <InstagramFilledIcon className="size-6" />,
     link: "https://www.instagram.com/cecile_villacorta_miranda",
   },
-  // {
-  //   icon: <TwitterIcon />,
-  //   link: "companyData?.twitter",
-  // },
-
-  // {
-  //   icon: <PintrestIcon />,
-  //   link: "companyData?.linkedin",
-  // },
 ];

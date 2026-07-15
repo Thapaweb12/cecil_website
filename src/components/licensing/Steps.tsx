@@ -8,7 +8,7 @@ const steps = [
         <p>
           Enroll now at{" "}
           <a
-            href="https://partners.xcelsolutions.com/PFAVillacorta"
+            href="https://partners.xcelsolutions.com/vfavillacorta"
             className="text-blue-600 underline"
             target="_blank"
             rel="noopener noreferrer"
@@ -155,9 +155,6 @@ const StepCard: FC<{ step: (typeof steps)[0] }> = ({ step }) => (
 
 const StepsGrid: FC = () => (
   <div className="min-h-screen bg-gray-100 py-12 px-2 sm:px-6">
-    {/* <h1 className="text-3xl font-extrabold text-center text-gray-800 mb-12">
-      Use Discount Code: <span className="text-red-600">PFACRISTE</span>
-    </h1> */}
     <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 max-w-7xl mx-auto">
       {steps.map((step, index) => (
         <StepCard key={index} step={step} />

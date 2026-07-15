@@ -1,13 +1,16 @@
 /** @type {import('next').NextConfig} */
 
+// NOTE: with `output: "export"` (static hosting on Hostinger), Next cannot set
+// HTTP response headers — those are configured at the host level. See
+// `public/.htaccess` for the security headers + caching applied by Apache.
+
 const nextConfig = {
   reactStrictMode: false,
   eslint: {
     ignoreDuringBuilds: true,
   },
-  generateEtags: false,
   images: {
-    unoptimized: true, // Disable image optimization for static exports
+    unoptimized: true, // required for static export
   },
   output: "export",
   webpack(config) {
@@ -30,21 +33,6 @@ const nextConfig = {
     );
     return config;
   },
-  async headers() {
-    return [
-      {
-        source: "/:path*",
-        headers: securityHeaders,
-      },
-    ];
-  },
 };
-
-const securityHeaders = [
-  {
-    key: "Cache-Control",
-    value: "no-store",
-  },
-];
 
 export default nextConfig;

@@ -1,4 +1,4 @@
-import { ProfileImage2, ProfileQuoteImage } from "@/assets/images";
+import { ProfileImage2 } from "@/assets/images";
 import Image from "next/image";
 import React from "react";
 import ShareButton from "./ShareButton";
@@ -50,6 +50,18 @@ const socialData = [
   },
 ];
 
+const cardServices = [
+  "Complimentary Financial Needs Analysis",
+  "No-Cost Review of Your Existing Insurance Policies",
+  "Life Insurance with Living Benefits",
+  "Mortgage Protection",
+  "Term Life Insurance with Living Benefits",
+  "Final Expense Planning",
+  "Debt Management Solutions",
+  "Wills and Trust Referrals",
+  "Indexed Annuities with Guaranteed Lifetime Income",
+];
+
 const DigitalCard = (props: Props) => {
   return (
     <div className="mx-auto max-w-[340px] w-full flex flex-col items-center justify-center gap-y-6 py-16 ">
@@ -66,7 +78,7 @@ const DigitalCard = (props: Props) => {
           Cecile M. Villacorta
         </h1>
         <div className="text-xs ">
-          <p className="text-center py-2">Qualified Field Director - PFA</p>
+          <p className="text-center py-2">National Marketing Director</p>
 
           <p className="leading-5">
             Entrepreneur, Specializing in Life Insurance with Living Benefits,
@@ -95,12 +107,15 @@ const DigitalCard = (props: Props) => {
           </Link>
         ))}
       </div>
-      <div className="w-[280px] flex-shrink-0 h-[320px] ">
-        <Image
-          src={ProfileQuoteImage}
-          alt="Profile Quote Image"
-          className="w-full h-full"
-        />
+      <div className="w-full max-w-[300px] flex-shrink-0">
+        <h2 className="text-xl font-bold text-center text-dark-blue mb-4">
+          My Services
+        </h2>
+        <ul className="space-y-2 text-sm font-medium list-disc pl-5">
+          {cardServices.map((service) => (
+            <li key={service}>{service}</li>
+          ))}
+        </ul>
       </div>
       <DigitalCardForm />
     </div>

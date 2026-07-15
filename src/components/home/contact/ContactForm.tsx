@@ -108,8 +108,9 @@ const ContactForm = ({ type }: Props) => {
         ))}
         <textarea
           placeholder="Your Message"
+          aria-label="Your Message"
           required
-          className="w-full  pl-3 pt-2 resize-none h-[140px] md:h-[200px] outline-none  border border-gray-400 rounded-lg "
+          className="w-full rounded-lg border border-line pl-3 pt-2 resize-none h-[140px] md:h-[200px] outline-none focus:border-teal focus:ring-2 focus:ring-teal/30"
           {...register("message")}
         />
         {/* Hidden anti-spam field */}

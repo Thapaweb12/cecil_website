@@ -1,21 +1,20 @@
-import React from "react";
-import Hero from "./Hero";
-import OurMission from "./OurMission";
+import HomeHero from "./HomeHero";
+import CarrierWall from "./CarrierWall";
 import OurServices from "./OurServices";
+import OurMission from "./OurMission";
 import BusinessOpportunity from "./BusinessOpportunity";
 import ContactUs from "./ContactUs";
 
-type Props = {};
-
-const Home = (props: Props) => {
+const Home = () => {
   return (
-    <div className="space-y-12 pb-20">
-      <Hero />
-      <OurMission />
+    <>
+      <HomeHero />
+      <CarrierWall />
       <OurServices />
+      <OurMission />
       <BusinessOpportunity />
       <ContactUs />
-    </div>
+    </>
   );
 };
 

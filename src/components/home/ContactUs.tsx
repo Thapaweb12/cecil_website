@@ -1,38 +1,50 @@
-import React from "react";
 import ContactForm from "./contact/ContactForm";
 
-type Props = {};
-
-const ContactUs = (props: Props) => {
+const ContactUs = () => {
   return (
-    <div className="space-y-14 container">
-      <h3 className="text-center text-primary text-3xl font-bold">
-        Villacorta Insurance Services
-      </h3>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="space-y-6">
-          <h4 className="text-2xl font-bold  text-center ">Living Benefits</h4>
-          <ContactForm type="living_benefits" />
+    <section id="contact" className="section bg-surface-2" aria-labelledby="contact-heading">
+      <div className="container">
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="eyebrow justify-center">Get in Touch</p>
+          <h2 id="contact-heading" className="headline mt-4 text-3xl md:text-4xl">
+            Let&rsquo;s Build Your Plan Together
+          </h2>
+          <p className="mt-5 text-lg leading-relaxed text-body">
+            Tell me a little about what you&rsquo;re looking for and I&rsquo;ll be
+            in touch. Prefer to talk?{" "}
+            <a
+              href="tel:626-534-4411"
+              className="whitespace-nowrap font-semibold text-secondary hover:text-teal"
+            >
+              Call 626-534-4411
+            </a>
+            .
+          </p>
         </div>
-        <div className="space-y-6">
-          <h4 className="text-2xl font-bold  text-center ">
-            Business Opportunity
-          </h4>
-          <ContactForm type="business_opportunity" />
+
+        <div className="mx-auto mt-12 grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-2">
+          <div className="card p-7 md:p-8">
+            <h3 className="text-xl font-bold text-ink">Request Living Benefits Info</h3>
+            <p className="mt-1 text-sm text-muted">
+              A free, no-obligation needs analysis for you and your family.
+            </p>
+            <div className="mt-6">
+              <ContactForm type="living_benefits" />
+            </div>
+          </div>
+
+          <div className="card p-7 md:p-8">
+            <h3 className="text-xl font-bold text-ink">Explore the Business Opportunity</h3>
+            <p className="mt-1 text-sm text-muted">
+              Learn how to earn while you learn with the VANTAGE EAGLES team.
+            </p>
+            <div className="mt-6">
+              <ContactForm type="business_opportunity" />
+            </div>
+          </div>
         </div>
       </div>
-      {/* <div className="max-w-lg mx-auto space-y-4">
-        <h4 className="text-4xl font-bold  text-center ">Contact us</h4>
-        <div className="space-y-2 text-center font-semibold">
-          <p>
-            To make an appointment for any information, you can fill out the
-            attached form, or contact us directly:
-          </p>
-          <p>Phone : 1(626) 534-4411</p>
-          <p>Email : cecilev628@gmail.com</p>
-        </div>
-      </div> */}
-    </div>
+    </section>
   );
 };
 

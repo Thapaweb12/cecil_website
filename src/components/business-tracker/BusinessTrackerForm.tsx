@@ -102,20 +102,20 @@ const BusinessTrackerForm = () => {
     {
       name: "pfa_id",
       type: "text",
-      lable: "PFA Id",
-      placeholder: "Your PFA Id",
+      lable: "Vantage Id",
+      placeholder: "Your Vantage Id",
       validation: {
         required: {
           value: true,
-          message: "Oops! Enter your PFA Id",
+          message: "Oops! Enter your Vantage Id",
         },
       },
     },
   ];
 
   const options = [
-    "I like the PFA products",
-    "I need the PFA products",
+    "I like the Vantage products",
+    "I need the Vantage products",
     "I need part-time income",
     "I need a new career",
     "I want to build my own business",
@@ -349,7 +349,8 @@ const BusinessTrackerForm = () => {
           <label className="text-sm">Message</label>
           <textarea
             placeholder="Why? What is your story?"
-            className="w-full  pl-3 pt-2 resize-none h-[140px] md:h-[200px] outline-none  border border-gray-400 rounded-lg "
+            aria-label="Your story"
+            className="w-full rounded-lg border border-line pl-3 pt-2 resize-none h-[140px] md:h-[200px] outline-none focus:border-teal focus:ring-2 focus:ring-teal/30"
             {...register("message")}
           />
         </div>

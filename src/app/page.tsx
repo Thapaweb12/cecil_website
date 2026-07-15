@@ -6,7 +6,7 @@ export default function page() {
   return (
     <div>
       <Navbar />
-      <div className="pt-[108px] min-h-screen">
+      <div className="pt-[64px] lg:pt-[72px] min-h-screen">
         <Home />
       </div>
       <Footer />
