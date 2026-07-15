@@ -1,0 +1,6 @@
+User-Agent: *
+Allow: /
+Disallow: /digital-card
+
+Host: https://cecilevillacorta.thapaweb.com
+Sitemap: https://cecilevillacorta.thapaweb.com/sitemap.xml
