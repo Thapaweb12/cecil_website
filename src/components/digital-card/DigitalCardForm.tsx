@@ -76,14 +76,11 @@ const DigitalCardForm = () => {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit(onSubmit)}
-      className="flex flex-col w-full px-4"
-    >
+    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col w-full">
       <p className="text-center text-2xl font-medium text-gray-600 pb-5">
         Contact Me
       </p>
-      <div className="flex flex-col gap-2 md:gap-4 w-full">
+      <div className="flex flex-col gap-3 w-full">
         {inputFields.map((field) => (
           <CustomInput
             key={field.name}
@@ -93,6 +90,8 @@ const DigitalCardForm = () => {
             required={field.required}
             register={register}
             errors={errors}
+            inputClassName="text-base"
+            className="py-2.5"
           />
         ))}
 
@@ -106,7 +105,7 @@ const DigitalCardForm = () => {
 
       <CustomButton
         isLoading={isLoading}
-        className="bg-primary py-1 "
+        className="bg-primary py-2.5 mt-4"
         type="submit"
       >
         Submit

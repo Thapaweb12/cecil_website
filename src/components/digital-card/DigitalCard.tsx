@@ -64,50 +64,54 @@ const cardServices = [
 
 const DigitalCard = (props: Props) => {
   return (
-    <div className="mx-auto max-w-[340px] w-full flex flex-col items-center justify-center gap-y-6 py-16 ">
-      <div className="w-[240px] flex-shrink-0 h-[320px] relative ">
+    <div className="mx-auto w-full max-w-[420px] flex flex-col items-center justify-center gap-y-6 px-5 py-10 sm:py-16 ">
+      <div className="w-full max-w-[280px] aspect-[4/5] flex-shrink-0 relative ">
         <Image
           src={ProfileImage2}
           alt="Profile Image"
-          className="w-full h-full rounded-2xl"
+          className="w-full h-full rounded-2xl object-cover"
         />
         <ShareButton />
       </div>
-      <div className="w-full flex-shrink-0 max-w-[250px]">
+      <div className="w-full flex-shrink-0">
         <h1 className="text-[26px] font-bold text-center">
           Cecile M. Villacorta
         </h1>
         <div className="text-xs ">
           <p className="text-center py-2">National Marketing Director - VFA</p>
 
-          <p className="leading-5">
+          <p className="text-center leading-5">
             Entrepreneur, Specializing in Life Insurance with Living Benefits,
             Insurance Professional Team Builder
           </p>
-          <p className="mt-1">LIC. California #0L99919</p>
+          <p className="mt-1 text-center">LIC. California #0L99919</p>
         </div>
       </div>
 
-      <a href="/Cecile-M.-Villacorta.vcf" download={"Cecile M. Villacorta.vcf"}>
-        <CustomButton className="text-sm font-semibold  w-[200px]">
+      <a
+        href="/Cecile-M.-Villacorta.vcf"
+        download={"Cecile M. Villacorta.vcf"}
+        className="w-full max-w-[240px]"
+      >
+        <CustomButton className="text-sm font-semibold w-full">
           Add to contact
         </CustomButton>
       </a>
 
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid w-full grid-cols-2 gap-4">
         {socialData?.map((item, index) => (
           <Link
             href={item?.link}
             key={index}
             target="_blank"
-            className="bg-gray-100 p-4 rounded-md flex flex-col items-center justify-center gap-3 font-medium"
+            className="bg-gray-100 p-4 rounded-md flex flex-col items-center justify-center gap-3 font-medium min-h-[88px] active:bg-gray-200"
           >
             {item?.icon}
             {item?.title}
           </Link>
         ))}
       </div>
-      <div className="w-full max-w-[300px] flex-shrink-0">
+      <div className="w-full flex-shrink-0">
         <h2 className="text-xl font-bold text-center text-dark-blue mb-4">
           My Services
         </h2>
