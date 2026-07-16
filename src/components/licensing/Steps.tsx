@@ -2,7 +2,7 @@ import { FC } from "react";
 
 const steps = [
   {
-    title: "Step 1: Enroll 32 Hours",
+    title: "Step 1: Enroll in LIFE ONLY or LIFE AND HEALTH",
     content: (
       <>
         <p>
@@ -18,26 +18,47 @@ const steps = [
           .
         </p>
         <ol className="list-decimal pl-4">
-          <li> Insurance Pre-Licensing bundle courses</li>
+          <li>Insurance Pre-Licensing bundle courses.</li>
           <li>Select your state.</li>
           <li>
-            Select Licensing education{" "}
-            <span className="text-red-600">{` (LIFE Only)`}</span>
+            Select Licensing education (LIFE Only or LIFE &amp; HEALTH), plus
+            Code of Ethics (12 hours for CA).
           </li>
         </ol>
       </>
     ),
   },
   {
-    title: "Step 2: Fingerprinting",
+    title: "Step 2: Complete Your Fingerprinting & Background Check",
     content: (
-      <div>
-        Fingerprinting needs to be done <strong>before your exam.</strong> This
-        process takes the longest, so it is highly suggested to do it prior to
-        your exam. If you choose to do fingerprinting before your exam, please{" "}
-        <strong>print page 1 </strong> only of the pdf below. You can take this
-        form to any local UPS. If you are unable to do it prior, your
-        fingerprints can also be taken the day of.
+      <div className="space-y-3">
+        <p>
+          Before you can receive your life insurance license, most states
+          require you to complete a fingerprinting appointment and pass a
+          background check. This helps ensure that all licensed insurance
+          professionals meet state standards.
+        </p>
+        <p>
+          Schedule your fingerprinting appointment through your state&apos;s
+          insurance licensing agency or its approved fingerprinting vendor.
+        </p>
+        <p>
+          Fingerprinting is typically completed by a third-party provider, and
+          applicants are responsible for the fee, which generally ranges from
+          $35 to $75, depending on the state. Some states also offer
+          electronic fingerprinting through approved law enforcement agencies.
+        </p>
+        <p>
+          After your fingerprints are submitted, your background check is
+          usually initiated automatically or can be completed online. Aside
+          from paying the required fee, there is typically no additional
+          action needed from you.
+        </p>
+        <p>
+          Completing this step is an important part of the licensing process
+          and must be successfully finished before your life insurance
+          license can be issued.
+        </p>
       </div>
     ),
   },
@@ -108,6 +129,7 @@ const steps = [
     title: "Step 5: Apply for License",
     content: (
       <div className="space-y-3">
+        <p className="font-semibold">Life agent only or Life and Health.</p>
         <p>
           Visit{" "}
           <a

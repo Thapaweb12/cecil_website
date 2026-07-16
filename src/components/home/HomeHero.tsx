@@ -91,7 +91,7 @@ const HomeHero = () => {
           <div className="absolute -bottom-5 left-1/2 w-[86%] -translate-x-1/2 rounded-2xl border border-line bg-surface/95 px-5 py-3 text-center shadow-card backdrop-blur">
             <p className="text-sm font-semibold text-ink">Cecile M. Villacorta</p>
             <p className="text-xs text-muted">
-              National Marketing Director · Living Benefits Specialist
+              National Marketing Director - VFA · Living Benefits Specialist
             </p>
           </div>
         </div>

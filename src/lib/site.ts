@@ -6,12 +6,12 @@
 export const site = {
   name: "Villacorta Insurance Services",
   personName: "Cecile M. Villacorta",
-  jobTitle: "National Marketing Director",
+  jobTitle: "National Marketing Director - VFA",
   brokerage: "Vantage Financial Alliance",
   url: "https://cecilevillacorta.thapaweb.com",
   license: "CA Insurance Lic. #0L99919",
   description:
-    "Cecile M. Villacorta, National Marketing Director at Vantage Financial Alliance, helps California families protect what matters most with life insurance, living benefits, annuities and retirement planning.",
+    "Cecile M. Villacorta, National Marketing Director - VFA at Vantage Financial Alliance, helps families protect what matters most with life insurance, living benefits, annuities and retirement planning.",
   // Cecile's Vantage recruiting / "join the team" funnel.
   joinUrl: "https://opportunity.iamvantage.com/?refid=NJ7765",
   telephone: "+1-626-534-4411",

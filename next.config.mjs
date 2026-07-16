@@ -13,6 +13,7 @@ const nextConfig = {
     unoptimized: true, // required for static export
   },
   output: "export",
+  trailingSlash: true,
   webpack(config) {
     const fileLoaderRule = config.module.rules.find((rule) =>
       rule.test?.test?.(".svg")

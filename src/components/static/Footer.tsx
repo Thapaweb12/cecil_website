@@ -24,7 +24,7 @@ const Footer = () => {
             Villacorta Insurance&nbsp;Services
           </p>
           <p className="mt-3 max-w-xs text-sm leading-relaxed text-white/70">
-            Helping California families protect what matters most — with life
+            Helping families protect what matters most — with life
             insurance, living benefits, annuities and retirement planning.
           </p>
           <p className="mt-4 text-xs font-medium uppercase tracking-wider text-white/50">

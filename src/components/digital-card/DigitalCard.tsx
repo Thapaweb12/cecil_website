@@ -78,7 +78,7 @@ const DigitalCard = (props: Props) => {
           Cecile M. Villacorta
         </h1>
         <div className="text-xs ">
-          <p className="text-center py-2">National Marketing Director</p>
+          <p className="text-center py-2">National Marketing Director - VFA</p>
 
           <p className="leading-5">
             Entrepreneur, Specializing in Life Insurance with Living Benefits,
