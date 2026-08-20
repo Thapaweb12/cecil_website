@@ -121,9 +121,33 @@ const faq = {
   ],
 };
 
+/**
+ * The studio that built and maintains this site. Declared as a real entity so
+ * the "Website by ThapaWeb" footer credit is machine-readable rather than only
+ * a human-readable string — answer engines resolve `creator` to an org with a
+ * URL, which a bare anchor does not give them.
+ */
+const webDesigner = {
+  "@type": "Organization",
+  "@id": "https://thapaweb.com/#organization",
+  name: "ThapaWeb",
+  url: "https://thapaweb.com/",
+};
+
+const webSite = {
+  "@type": "WebSite",
+  "@id": `${site.url}/#website`,
+  url: site.url,
+  name: site.name,
+  description: site.description,
+  inLanguage: "en-US",
+  publisher: { "@id": `${site.url}/#business` },
+  creator: { "@id": "https://thapaweb.com/#organization" },
+};
+
 const graph = {
   "@context": "https://schema.org",
-  "@graph": [insuranceAgency, person, faq],
+  "@graph": [webSite, insuranceAgency, person, faq, webDesigner],
 };
 
 const JsonLd = () => (

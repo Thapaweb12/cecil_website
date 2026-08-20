@@ -107,13 +107,23 @@ const Footer = () => {
         <div className="container flex flex-col gap-3 py-6 text-xs text-white/55 md:flex-row md:items-center md:justify-between">
           <div className="space-y-1">
             <p>© {year} Villacorta Insurance Services. All rights reserved.</p>
+            {/*
+              Studio credit. House rule (2026-08-06): anchor is the brand, one
+              word — commercial anchor text sitewide in a footer is the exact
+              footprint engines discount. `rel="noopener"` only: `noreferrer`
+              would strip the Referer header and land clicks in analytics as
+              direct traffic instead of an attributable referral. Never
+              `nofollow`. Now that this site is on its own registrable domain,
+              this is a real external link rather than an internal one.
+            */}
             <p>
-              Powered by{" "}
+              Website by{" "}
               <a
-                href="https://thapaweb.com"
+                href="https://thapaweb.com/"
                 target="_blank"
-                rel="noopener noreferrer"
-                className="font-semibold text-white/80 transition-colors hover:text-teal"
+                rel="noopener"
+                title="ThapaWeb — website design and SEO studio"
+                className="font-semibold text-white/80 underline decoration-white/25 underline-offset-2 transition-colors hover:text-teal hover:decoration-teal"
               >
                 ThapaWeb
               </a>

@@ -1,14 +1,16 @@
 /**
  * Single source of truth for site-wide identity, contact (NAP) and SEO data.
- * If Cecile moves to a custom domain, change `url` here and everything
- * (metadata, canonicals, sitemap, JSON-LD, Open Graph) updates with it.
+ * `url` drives everything — metadata, canonicals, sitemap, JSON-LD, Open Graph.
+ *
+ * Moved to Cecile's own domain 2026-08-19 (was cecilevillacorta.thapaweb.com).
+ * The old subdomain still 301s here, so link equity follows; see README.
  */
 export const site = {
   name: "Villacorta Insurance Services",
   personName: "Cecile M. Villacorta",
   jobTitle: "National Marketing Director - VFA",
   brokerage: "Vantage Financial Alliance",
-  url: "https://cecilevillacorta.thapaweb.com",
+  url: "https://cecilevillacorta.com",
   license: "CA Insurance Lic. #0L99919",
   description:
     "Cecile M. Villacorta, National Marketing Director - VFA at Vantage Financial Alliance, helps families protect what matters most with life insurance, living benefits, annuities and retirement planning.",
