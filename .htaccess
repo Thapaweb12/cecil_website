@@ -4,6 +4,28 @@
 # This file is copied into the exported `out/` folder at build time.
 # ============================================================================
 
+# ------------------------------------------------- MOVED: 301 to own domain -
+# 2026-08-19: the site moved to https://cecilevillacorta.com (hosted on
+# Vercel). This folder now exists only to redirect the retired
+# cecilevillacorta.thapaweb.com subdomain, so that the links, bookmarks and
+# whatever ranking the subdomain accumulated all transfer to the new domain
+# instead of being lost or competing with it as duplicate content.
+#
+# This block must stay FIRST — the clean-URL rules below would otherwise
+# serve a local copy of a page instead of redirecting to the real one.
+#
+# The static site files are deliberately left in place underneath as a
+# fallback: if mod_rewrite is ever unavailable, visitors get the site rather
+# than a directory listing. They are not the live site and are not updated.
+# Keep this redirect alive indefinitely — a 301 only passes signal while it
+# is actually being served.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  # Don't loop if this file is ever served from the new domain itself.
+  RewriteCond %{HTTP_HOST} !^cecilevillacorta\.com$ [NC]
+  RewriteRule ^(.*)$ https://cecilevillacorta.com/$1 [R=301,L]
+</IfModule>
+
 # ---------------------------------------------------------------- Security ---
 <IfModule mod_headers.c>
   Header always set X-Content-Type-Options "nosniff"
